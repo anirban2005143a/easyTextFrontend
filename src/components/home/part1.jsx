@@ -35,7 +35,7 @@ const part1 = (props) => {
             <div className="headline mx-3 my-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, dicta sapiente illo ipsam inventore harum, dignissimos repudiandae</div>
             <div className="gettingStart d-flex justify-content-center mb-3">
               <Link to="/explore" >
-                <button className=' px-3 py-1 fs-4 fw-semibold rounded-3 my-3'>
+                <button className=' px-3 py-1 rounded-3 my-3'>
                   <span className=' w-100 h-100 position-relative z-1'>Explore</span>
                 </button>
               </Link>

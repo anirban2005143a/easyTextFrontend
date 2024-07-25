@@ -47,6 +47,12 @@
     outline: none;
     color: rgb(0, 0, 0);
     background-color: transparent;
+    font-size: 1.5rem;
+    font-weight: 600;
+    transition: all 100ms ease;
+}
+.homePart1 .mainContent .contentBox .contents button:hover{
+    box-shadow: 0 0 10px #945aff;
 }
 .homePart1 .mainContent .contentBox .contents button::before{
     content: '';

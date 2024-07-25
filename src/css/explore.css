@@ -15,7 +15,7 @@ html{
     -webkit-text-fill-color: transparent;
     background-clip: text;
     color: transparent;
-    animation: textBackground 12s linear 0s infinite ;
+    animation: textBackground 30s linear 0s infinite ;
 }
 @keyframes textBackground{
     0%{
@@ -87,7 +87,7 @@ html{
     font-weight: 600;
     color: rgb(250, 235, 215);
     background-color: black;
-    padding: 5px 10px;
+    padding: 5px 15px;
 }
 .exploreServices .allservices .serviceList .serviceItem .relatedAbout{
     padding: 5px 15px 15px 15px;

@@ -142,8 +142,8 @@ const navbar = (props) => {
                     <div className='serviceItem position-relative rounded-2 m-2 overflow-hidden'>
                         <div className=' position-relative '> <p className='fs-4 px-2 fw-semibold rounded-2 m-0 bg-body-secondary'>Services</p></div>
                     </div>
-                    <div className=" position-absolute bottom-0 w-100 h-auto text-white fs-3 fw-bold text-center pt-3">
-                         <Link>More..</Link>
+                    <div className=" position-absolute bottom-0 w-100 h-auto text-white fs-5 fw-semibold text-center mb-3">
+                         <Link className=' text-decoration-none text-white px-3 rounded-3 py-1' style={{backgroundColor:"#0000004a"}}  to='/explore'>More..</Link>
                     </div>
                 </div>
             </div>
