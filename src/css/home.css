@@ -138,7 +138,9 @@
     z-index: 0;
     animation-direction: var(--animation-direction);
 }
-
+.homepart2 .allservices .serviceList .serciceItem .serviceName{
+    color: rgb(255, 244, 212);
+}
 
 @keyframes boxshadowAnimate {
     0% {

@@ -108,7 +108,7 @@ const navbar = (props) => {
             </div>
 
             <div className="allservices w-100 position-relative hidden ">
-                <div className='servicesList start-0 p-1 d-flex flex-wrap align-items-center rounded-2 ' style={{ marginLeft: '15%', marginRight: "15%", backgroundImage: 'linear-gradient(74deg, rgb(66 133 244 / 25%), rgb(155 114 203 / 25%), rgb(217 101 112 / 25%))' }}>
+                <div className='servicesList position-relative start-0 p-1 pb-3 d-flex flex-wrap align-items-center rounded-2 ' >
                     <div className='serviceItem position-relative rounded-2 m-2 overflow-hidden'>
                         <div className=' position-relative '> <p className='fs-4 px-2 fw-semibold rounded-2 m-0 bg-body-secondary'>Blog</p></div>
                     </div>
@@ -141,6 +141,9 @@ const navbar = (props) => {
                     </div>
                     <div className='serviceItem position-relative rounded-2 m-2 overflow-hidden'>
                         <div className=' position-relative '> <p className='fs-4 px-2 fw-semibold rounded-2 m-0 bg-body-secondary'>Services</p></div>
+                    </div>
+                    <div className=" position-absolute bottom-0 w-100 h-auto text-white fs-3 fw-bold text-center pt-3">
+                         <Link>More..</Link>
                     </div>
                 </div>
             </div>
