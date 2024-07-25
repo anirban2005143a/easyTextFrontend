@@ -1,0 +1,38 @@
+#footer{
+    opacity: 0;
+    transition: all;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+} 
+#footer.visibility{
+    opacity: 1;
+}
+.footer .footerChild .ourServies span ,.footer .footerChild .keys span ,.footer .footerChild .supportItem span{
+    font-size: 15px;
+    font-weight: 300;
+    color: aliceblue;
+    cursor: pointer;
+    padding: 5px 10px;
+    transition: all;
+    transition-duration: 200ms;
+    transition-timing-function: ease-in-out;
+}
+.footer .footerChild .supportItem span{
+    text-decoration: none;
+}
+.footer .footerChild .ourServies span:hover ,.footer .footerChild .keys span:hover ,.footer .footerChild .supportItem span:hover{
+    padding-left: 15px;
+}
+.footer .footerChild #title{
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+    color: antiquewhite;
+    transition: all;
+    transition-duration: 200ms;
+    transition-timing-function: ease-in-out;
+    user-select: none;
+}
+.footer .footerChild #title:hover{
+   transform: translateY(-5px);
+}

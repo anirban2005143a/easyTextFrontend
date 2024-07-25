@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.homePart1 {
+    position: relative;
+    background-color: #000000;
+}
+.homePart1::-webkit-scrollbar{
+    width: 0;
+    height: 0;
+}
+.homePart1 .mainContent{
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+.homePart1 .mainContent .contentBox{
+    z-index: 8;
+}
+.homePart1 .mainContent .contentBox .contents::-webkit-scrollbar{
+   width: 0;
+   height: 0;
+}
+.homePart1 .mainContent .contentBox .contents {
+    background-color: rgb(0, 0, 0);
+}
+.homePart1 .mainContent .contentBox .contents .title{
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    background: linear-gradient(74deg, #42cffd, #e45dff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+.homePart1 .mainContent .contentBox .contents .headline{
+    font-size: 1.1rem;
+    font-weight: 400;
+    text-align: center;
+    color: rgb(249, 242, 229);
+}
+.homePart1 .mainContent .contentBox .contents button{
+    position: relative;
+    overflow: hidden;
+    border: 0;
+    outline: none;
+    color: rgb(0, 0, 0);
+    background-color: transparent;
+}
+.homePart1 .mainContent .contentBox .contents button::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    background-color: transparent;
+    background-image: linear-gradient(45deg , rgb(201, 173, 255),rgb(201, 173, 255),rgb(133, 247, 255),rgb(201, 173, 255),rgb(172, 249, 255),rgb(201, 173, 255),rgb(201, 173, 255) );
+    background-size: 600% 200%;
+    animation: animateBtnBg 20s linear 0s infinite ;
+}
+@keyframes animateBtnBg{
+    0%{
+        background-position: 0 0;
+    }
+    50%{
+        background-position: 400% 0;
+    }
+    100%{
+        background-position: 0 0;
+    }
+}
+
+.homePart1 .mainContent .contentBox::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    background-image: linear-gradient(90deg ,rgb(107, 255, 255), rgb(107, 255, 255),rgb(140, 173, 255), rgb(255, 132, 255),rgb(255, 132, 255), #9b19ff ,rgb(107, 255, 255),rgb(107, 255, 255) );
+    background-size: 400%;
+    animation: boxshadowAnimate 25s linear 0s infinite;
+}
+.homePart1 .endingWave{
+    bottom: -150px;
+}
+.homePart1 .endingWave{
+    z-index: 7;
+}
+
+.homepart2{
+    opacity: 0;
+    transition: all;
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out;
+}
+.homepart2.visibility{
+    opacity: 1;
+}
+.homepart2 .serviceSection{
+    margin-top: 200px;
+}
+.homepart2 .serviceSection .title #title{
+    background: linear-gradient(74deg, #3582ff, #a658ff ,#ff6b7a );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+.homepart2 .allservices .serviceList{
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.342);
+}
+.homepart2 .allservices .serviceList .serciceItem{
+    padding: 1px;
+    cursor: pointer;
+    transition: all 200ms ease;
+    --angle : 90deg;
+    --animation-direction : 'reverse';
+}
+.homepart2 .allservices .serviceList .serciceItem:hover{
+    transform: translateY(-5px);
+}
+.homepart2 .allservices .serviceList .serciceItem::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(var(--angle) ,rgb(107, 255, 255 , 0.5), rgb(107, 255, 255 , 0.5),rgb(140, 173, 255 , 0.5), rgb(255, 132, 255 , 0.5),rgb(255, 132, 255 , 0.5), rgb(155, 25, 255 , 0.5) ,rgb(107, 255, 255 , 0.5),rgb(107, 255, 255 , 0.5) );
+    background-size: 400%;
+    animation: boxshadowAnimate 25s linear 0s infinite;
+    z-index: 0;
+    animation-direction: var(--animation-direction);
+}
+
+
+@keyframes boxshadowAnimate {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}

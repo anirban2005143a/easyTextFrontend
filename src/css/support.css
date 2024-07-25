@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#contact{
+    margin-top: 100px;
+}
+#contact .heading{
+    font-size: 50px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    background-image: linear-gradient(45deg,aqua ,#952bff, #ff669e , #952bff , aqua);
+    background-size: 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    animation: textBackground 12s linear 0s infinite;
+}
+#contact .contactForm{
+    padding: 1px;
+    position: relative;
+    background-color: red;
+    margin: 20px 0px;
+}
+#contact .contactForm form label{
+    font-size:medium;
+    color: white;
+}
+#contact .contactForm form input , #contact .contactForm form textarea{
+    width: 100%;
+    border: 0;
+    outline: 0;
+    color: rgb(0, 0, 0);
+    font-size: medium;
+    font-weight: 600;
+    background: rgb(255, 249, 228);
+    border-radius: 20px;
+    padding:10px 15px;
+    margin: 10px 0px;
+}
+#contact .contactForm form textarea{
+    min-height: 100px;
+    max-height: 200px;
+    scrollbar-width: thin;
+    scrollbar-color: rgb(214, 202, 158) rgb(255, 249, 228);
+}
+
+#contact .contactForm::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    background-image: linear-gradient(90deg ,rgb(107, 255, 255), rgb(107, 255, 255),rgb(140, 173, 255), rgb(255, 132, 255),rgb(255, 132, 255), #9b19ff ,rgb(107, 255, 255),rgb(107, 255, 255) );
+    background-size: 400%;
+    animation: boxshadowAnimate 25s linear 0s infinite;
+}
