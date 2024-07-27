@@ -3,6 +3,9 @@ import '../../css/home.css'
 
 const part2 = (props) => {
 
+  const [serviceItemHeight, setserviceItemHeight] = useState(0)
+  const [isProgress, setisProgress] = useState(null)
+
   const resizeServiceItem = () => {
     const serviceList = document.querySelector('.homepart2 .serviceList')
     const serciceItemArr = Array.from(document.querySelectorAll('.homepart2 .serciceItem'))
@@ -11,8 +14,18 @@ const part2 = (props) => {
     width >= 850 ? serciceItemArr.forEach((item) => { item.style.width = `${width * 0.25 - 30}px` }) : ''
     600 <= width && width < 850 ? serciceItemArr.forEach((item) => { item.style.width = `${width * 0.33 - 30}px` }) : ""
     450 <= width && width < 600 ? serciceItemArr.forEach((item) => { item.style.width = `${width * 0.5 - 50}px` }) : ""
-    width < 450 ? serciceItemArr.forEach((item) => { item.style.width = `${width * 1.0 -10}px` }) : ""
+    width < 450 ? serciceItemArr.forEach((item) => { item.style.width = `${width * 1.0 - 10}px` }) : ""
   }
+
+  // const findMaxItemHeight = ()=>{
+  //   const serviceItemArr = Array.from(document.querySelectorAll('.homepart2 .serviceSection .allservices .serviceList .serciceItem'))
+  //   let height = 0
+  //   serviceItemArr.forEach((item, index, arr) => {
+  //     setserviceItemHeight(Math.max(height, item.clientHeight))
+  //     height = item.clientHeight
+  //     index === arr.length - 1 ? setisProgress(false) : setisProgress(true)
+  //   })
+  // }
 
   const makeRandomAnimation = () => {
     const serciceItemArr = Array.from(document.querySelectorAll('.homepart2 .serciceItem'))
@@ -25,6 +38,23 @@ const part2 = (props) => {
     })
   }
 
+  // const makeAllServiceItem = (height) => {
+  //   const serviceItemArr = Array.from(document.querySelectorAll('.homepart2 .serviceSection .allservices .serviceList .serciceItem'))
+  //   serviceItemArr.forEach((item) => {
+  //     item.style.height = `${height}px`
+  //   })
+  //   makeRelatedContentCover(height)
+  // }
+
+  // const makeRelatedContentCover = (itemHeight) => {
+  //   const serviceItemArr = Array.from(document.querySelectorAll('.homepart2 .serviceSection .allservices .serviceList .serciceItem'))
+  //   serviceItemArr.forEach((item) => {
+  //     const itemNameHeight = item.querySelector('.serviceName').clientHeight
+  //     item.querySelector('.relatedContent').style.height = `${itemHeight - itemNameHeight -1}px`
+  //   })
+
+  // }
+
   window.addEventListener('resize', () => {
     resizeServiceItem()
   })
@@ -35,12 +65,19 @@ const part2 = (props) => {
   }, [])
 
 
+  // useEffect(() => {
+  //   !isProgress && serviceItemHeight !== 0 ? makeAllServiceItem(serviceItemHeight) : ""
+  // }, [isProgress, serviceItemHeight])
+
+
+
   return (
     <div ref={props.part2Ref} className={`homepart2 w-100 bg-black ${props.isPart2Visible ? 'visibility' : ''}`} style={{}}>
       <div className="serviceSection w-100 h-auto">
         <div className="title d-flex justify-content-center">
           <div id="title" className=' h1 fw-bold'>Explore More</div>
         </div>
+
         <div className="allservices w-100 h-auto">
           <div className="serviceList mx-md-4 mx-2 my-3 px-md-2 px-1 pt-2 d-flex flex-wrap justify-content-center align-items-center">
             <div className="serciceItem mx-2 my-2 position-relative rounded-3 overflow-hidden text-center text-white">

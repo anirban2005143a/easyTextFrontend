@@ -1,8 +1,11 @@
 import React, { useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import '../css/navbar.css'
+import '../css/importedCss.css'
 
 const navbar = (props) => {
+
+    const navigate = useNavigate()
 
     const setSizeOfServicesList = () => {
     }
@@ -37,38 +40,20 @@ const navbar = (props) => {
         const aboutMenu = menubar.querySelectorAll('div')[1]
         target.contains(pointer) ? allservices.classList.remove('hidden') : ''
 
-        if (target.getAttribute('clicked') === "false") {
-            if (!target.contains(pointer) && !allservices.querySelector('.servicesList').contains(pointer) && !menubar.contains(pointer)) {
-                allservices.classList.add('hidden')
+        !target.contains(pointer)
+            && !allservices.querySelector('.servicesList').contains(pointer)
+            && !menubar.contains(pointer) ?
+            allservices.classList.add('hidden') : ''
 
-            }
-            else if (allservices.querySelector('.servicesList').contains(pointer)) {
-                allservices.classList.remove('hidden')
+        allservices.querySelector('.servicesList').contains(pointer) ?
+            allservices.classList.remove('hidden') : ''
 
-            }
-            else if (menubar.contains(pointer) && allservices.querySelector('.servicesList').contains(pointer)) {
-                allservices.classList.remove('hidden')
+        menubar.contains(pointer) && allservices.querySelector('.servicesList').contains(pointer) ?
+            allservices.classList.remove('hidden') : ''
 
-            }
-            else if (homeMenu.contains(pointer) || aboutMenu.contains(pointer)) {
-                allservices.classList.add('hidden')
-            }
-        }
+        homeMenu.contains(pointer) || aboutMenu.contains(pointer) ?
+            allservices.classList.add('hidden') : ''
     }
-
-    const clickingServiceMenu = (e) => {
-        e.preventDefault()
-        const currentTarget = e.currentTarget
-        const allservices = document.querySelector('.navbar .allservices')
-        if (allservices.classList.contains('hidden')) {
-            currentTarget.setAttribute('clicked', "true")
-            allservices.classList.remove('hidden')
-        } else {
-            currentTarget.setAttribute('clicked', "false")
-            allservices.classList.add('hidden')
-        }
-    }
-
 
     window.addEventListener('resize', () => {
         setSizeOfServicesList()
@@ -84,7 +69,8 @@ const navbar = (props) => {
         document.addEventListener('click', (e) => {
             const serviceMenu = document.querySelector('.navbar .menubar .services')
             const allservices = document.querySelector('.navbar .allservices')
-            !allservices.querySelector('.servicesList').contains(e.target) && !serviceMenu.contains(e.target) ? allservices.classList.add('hidden') : ''
+            !allservices.querySelector('.servicesList').contains(e.target) && !serviceMenu.contains(e.target) ?
+                allservices.classList.add('hidden') : ''
         })
         document.addEventListener('mouseover', (e) => {
             const serviceMenu = document.querySelector('.navbar .services')
@@ -94,7 +80,7 @@ const navbar = (props) => {
 
 
     return (
-        <div ref={props.navbarRef} className='navbar position-fixed top-0 start-0 w-100  '>
+        <div ref={props.navbarRef} className='navbar position-absolute top-0 start-0 w-100  '>
             <div className="navbarGroup w-100 pt-2 d-flex align-items-center ">
                 <div className="siteName mx-3 mb-2 fw-bolder ">
                     <div className="name " >Easy Text</div>
@@ -103,12 +89,17 @@ const navbar = (props) => {
                 <div className="menubar ms-md-3 ms-sm-2 mt-1 pb-1 position-relative d-flex justify-content-between align-items-center" >
                     <Link to='/'> <div className=' py-2 mx-md-3 mx-sm-2 mx-1 px-md-2 px-1 '>Home</div></Link>
                     <Link to='/about'> <div className=' py-2 mx-md-3 mx-sm-2 mx-1 px-md-2 px-1 '>About</div></Link>
-                    <div className=' py-2 mx-md-3 mx-sm-2 mx-1 px-md-2 px-1 services' clicked="false" onClick={clickingServiceMenu} >Services</div>
+                    <div className=' py-2 mx-md-3 mx-sm-2 mx-1 px-md-2 px-1 services' clicked="false">Services</div>
                 </div>
             </div>
 
             <div className="allservices w-100 position-relative hidden ">
-                <div className='servicesList position-relative start-0 p-1 pb-3 d-flex flex-wrap align-items-center rounded-2 ' >
+                <div className='servicesList position-relative start-0 px-1 pt-1 d-flex flex-wrap align-items-center rounded-2 ' style={{ paddingBottom: "50px" }} >
+                    <div className='serviceItem position-relative rounded-2 m-2 overflow-hidden'>
+                        <button class="glowbtn">
+                            Watch
+                        </button>
+                    </div>
                     <div className='serviceItem position-relative rounded-2 m-2 overflow-hidden'>
                         <div className=' position-relative '> <p className='fs-4 px-2 fw-semibold rounded-2 m-0 bg-body-secondary'>Blog</p></div>
                     </div>
@@ -142,8 +133,23 @@ const navbar = (props) => {
                     <div className='serviceItem position-relative rounded-2 m-2 overflow-hidden'>
                         <div className=' position-relative '> <p className='fs-4 px-2 fw-semibold rounded-2 m-0 bg-body-secondary'>Services</p></div>
                     </div>
-                    <div className=" position-absolute bottom-0 w-100 h-auto text-white fs-5 fw-semibold text-center mb-3">
-                         <Link className=' text-decoration-none text-white px-3 rounded-3 py-1' style={{backgroundColor:"#0000004a"}}  to='/explore'>More..</Link>
+
+                    <div className=" position-absolute w-100 h-auto text-white fs-5 fw-semibold d-flex justify-content-center mb-3" style={{ scale: "0.66", bottom: "-15px" }}>
+                        <button class="animated-button">
+                            <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+                                ></path>
+                            </svg>
+                            <span class="text">Explore</span>
+                            <span class="circle"></span>
+                            <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+                                ></path>
+                            </svg>
+                        </button>
+
                     </div>
                 </div>
             </div>
