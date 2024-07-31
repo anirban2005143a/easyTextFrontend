@@ -3,7 +3,7 @@ import Navbar from '../Navbar'
 import Footer from '../Footer'
 import '../../css/support.css'
 
-const requestFeature = () => {
+const RequestFeature = () => {
 
   const footerRef = useRef()
   const [isFooterVisible, setisFooterVisible] = useState(false)
@@ -69,4 +69,4 @@ const requestFeature = () => {
   )
 }
 
-export default requestFeature
+export default RequestFeature

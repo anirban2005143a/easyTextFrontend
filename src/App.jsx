@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react'
 import './css/home.css'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Home from './components/support/home'
-import Explore from './components/explore';
-import About from './components/support/about'
-import Contact from './components/support/contact';
-import RequestFeature from './components/support/requestFeature';
+import Home from './components/support/Home'
+import Explore from './components/Explore.jsx';
+import About from './components/support/About'
+import Contact from './components/support/Contact';
+import RequestFeature from './components/support/RequestFeature';
 import Testing from './Testing';
 
 function App() {
@@ -40,7 +40,8 @@ function App() {
 
   return (
     <RouterProvider router={router} />
-  )    
+
+  )
 }
 
 export default App

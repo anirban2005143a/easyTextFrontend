@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react'
-import BackgroundDesign from '../backgroundDesign'
+import BackgroundDesign from '../BackgroundDesign'
 import { Link } from 'react-router-dom'
 import '../../css/home.css'
 
-const part1 = (props) => {
+const Part1 = (props) => {
 
   const resizePart1MainContent = () => {
     window.innerWidth >= 950 ? document.querySelector('.homePart1').querySelector('.contentBox').style.width = '50%' : ''
@@ -73,4 +73,4 @@ const part1 = (props) => {
   )
 }
 
-export default part1
+export default Part1

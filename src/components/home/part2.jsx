@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import '../../css/home.css'
 
-const part2 = (props) => {
+const Part2 = (props) => {
 
   const [serviceItemHeight, setserviceItemHeight] = useState(0)
   const [isProgress, setisProgress] = useState(null)
@@ -187,4 +187,4 @@ const part2 = (props) => {
   )
 }
 
-export default part2
+export default Part2

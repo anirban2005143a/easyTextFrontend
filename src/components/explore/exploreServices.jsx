@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import '../../css/explore.css'
 
-const exploreServices = () => {
+const ExploreServices = () => {
 
     const resize = () => {
         const arr = Array.from(document.querySelectorAll('.exploreServices .allservices .serviceItem'))
@@ -133,4 +133,4 @@ const exploreServices = () => {
     )
 }
 
-export default exploreServices
+export default ExploreServices

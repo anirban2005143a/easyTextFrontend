@@ -5,7 +5,7 @@ import "./index.css";
 import Layout from "./components/Layout.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <Layout>
+  <React.StrictMode>
     <App />
-  </Layout>
+  </React.StrictMode>
 );
