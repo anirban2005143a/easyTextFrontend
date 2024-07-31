@@ -1,8 +1,8 @@
 import React, { useEffect , useRef , useState } from 'react'
 import Part1 from '../home/part1'
-import Navbar from '../navbar'
+import Navbar from '../Navbar'
 import Part2 from '../home/part2'
-import Footer from '../footer'
+import Footer from '../Footer'
 
 const home = () => {
     

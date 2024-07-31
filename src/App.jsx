@@ -6,11 +6,16 @@ import Explore from './components/explore';
 import About from './components/support/about'
 import Contact from './components/support/contact';
 import RequestFeature from './components/support/requestFeature';
+import Testing from './Testing';
 
 function App() {
 
 
   const router = createBrowserRouter([
+    {
+      path:'/testing',
+      element : <Testing/>
+    },
     {
       path:'/',
       element : <Home/>
@@ -35,8 +40,7 @@ function App() {
 
   return (
     <RouterProvider router={router} />
-
-  )
+  )    
 }
 
 export default App

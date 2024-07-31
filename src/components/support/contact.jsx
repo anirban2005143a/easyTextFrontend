@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
-import Navbar from '../navbar'
-import Footer from '../footer'
+import Navbar from '../Navbar'
+import Footer from '../Footer'
 import '../../css/support.css'
 
 const contact = () => {
