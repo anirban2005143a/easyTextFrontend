@@ -34,9 +34,10 @@
     transition-duration: 200ms;
     transition-timing-function: ease-in-out;
 }
-.footer .footerChild .ourServies div,
-.footer .footerChild .keys div,
-.footer .footerChild .supportItem div{
+.footer .footerChild .ourServies span,
+.footer .footerChild .keys span,
+.footer .footerChild .supportItem span{
+    color: rgb(255, 255, 255);
     cursor: pointer;
     transition: transform 300ms ease;
 }

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import '../css/navbar.css'
-import '../css/importedCss.css'
+import '../css/navbar/navbar.css'
+import '../css/navbar/importedCss.css'
 
 const navbar = (props) => {
 
