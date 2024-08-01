@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react'
-import Navbar from '../navbar'
-import Footer from '../footer'
+import Navbar from '../Navbar'
+import Footer from '../Footer'
 import '../../css/support.css'
 
-const contact = () => {
+const Contact = () => {
 
     const footerRef = useRef()
     const [isFooterVisible, setisFooterVisible] = useState(false)
@@ -73,4 +73,4 @@ const contact = () => {
     )
 }
 
-export default contact
+export default Contact

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import '../../css/explore.css'
 
-const exploreServices = () => {
+const ExploreServices = () => {
 
     const resize = () => {
         const arr = Array.from(document.querySelectorAll('.exploreServices .allservices .serviceItem'))
@@ -28,71 +28,71 @@ const exploreServices = () => {
                 <div className="serviceList w-100">
                     <div className="serviceItem">
                         <div className="serviceName">Blog Title</div>
-                        <div className="relatedAbout">Lorem ipsum dolor sit amet consectetur adipisicing Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum quisquam delectus aliquam, nam </div>
+                        <div className="relatedAbout">Please provide a title for your blog post </div>
                     </div>
                     <div className="serviceItem">
                         <div className="serviceName">Blog Introduction</div>
-                        <div className="relatedAbout">Lorem ipsum dolor sit amet consectetur adipisicing Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum quisquam delectus aliquam, nam </div>
+                        <div className="relatedAbout">Please provide a Blog for your blog Introduction </div>
                     </div>
                     <div className="serviceItem">
                         <div className="serviceName">Blog Content</div>
-                        <div className="relatedAbout">Lorem ipsum dolor sit amet consectetur adipisicing Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum quisquam delectus aliquam, nam </div>
+                        <div className="relatedAbout">Please provide a Blog for your blog Content </div>
                     </div>
                     <div className="serviceItem">
                         <div className="serviceName">Blog Post</div>
-                        <div className="relatedAbout">Lorem ipsum dolor sit amet consectetur adipisicing Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum quisquam delectus aliquam, nam </div>
+                        <div className="relatedAbout">thinking..... </div>
                     </div>
                     <div className="serviceItem">
                         <div className="serviceName">Paragraph</div>
-                        <div className="relatedAbout">Lorem ipsum dolor sit amet consectetur adipisicing Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum quisquam delectus aliquam, nam </div>
+                        <div className="relatedAbout">Please provide a Paragraph for getting summary</div>
                     </div>
                     <div className="serviceItem">
                         <div className="serviceName">Social Media Post</div>
-                        <div className="relatedAbout">Lorem ipsum dolor sit amet consectetur adipisicing Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum quisquam delectus aliquam, nam </div>
+                        <div className="relatedAbout">thinking.....</div>
                     </div>
                     <div className="serviceItem">
                         <div className="serviceName">Promotional Advertisement</div>
-                        <div className="relatedAbout">Lorem ipsum dolor sit amet consectetur adipisicing Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum quisquam delectus aliquam, nam </div>
+                        <div className="relatedAbout">thinking.....</div>
                     </div>
                     <div className="serviceItem">
                         <div className="serviceName">Professional Email</div>
-                        <div className="relatedAbout">Lorem ipsum dolor sit amet consectetur adipisicing Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum quisquam delectus aliquam, nam </div>
+                        <div className="relatedAbout">thinking.....</div>
                     </div>
                     <div className="serviceItem">
                         <div className="serviceName">Youtube Video Description</div>
-                        <div className="relatedAbout">Lorem ipsum dolor sit amet consectetur adipisicing Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum quisquam delectus aliquam, nam </div>
+                        <div className="relatedAbout">Provide Your video details</div>
                     </div>
                     <div className="serviceItem">
                         <div className="serviceName">Youtube Video Tags</div>
-                        <div className="relatedAbout">Lorem ipsum dolor sit amet consectetur adipisicing Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum quisquam delectus aliquam, nam </div>
+                        <div className="relatedAbout">thinking.....</div>
                     </div>
                     <div className="serviceItem">
                         <div className="serviceName">Youtube Video Title</div>
-                        <div className="relatedAbout">Lorem ipsum dolor sit amet consectetur adipisicing Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum quisquam delectus aliquam, nam </div>
+                        <div className="relatedAbout">Provide Your video details</div>
                     </div>
                     <div className="serviceItem">
                         <div className="serviceName">Text Formate</div>
-                        <div className="relatedAbout">Lorem ipsum dolor sit amet consectetur adipisicing Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum quisquam delectus aliquam, nam </div>
+                        <div className="relatedAbout">loading.....</div>
                     </div>
                     <div className="serviceItem">
                         <div className="serviceName">Sentence Expender</div>
-                        <div className="relatedAbout">Lorem ipsum dolor sit amet consectetur adipisicing Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum quisquam delectus aliquam, nam </div>
+                        <div className="relatedAbout">loading.....</div>
                     </div>
                     <div className="serviceItem">
                         <div className="serviceName">Job Decsription</div>
-                        <div className="relatedAbout">Lorem ipsum dolor sit amet consectetur adipisicing Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum quisquam delectus aliquam, nam </div>
+                        <div className="relatedAbout">Provide Your Job role to get your job details</div>
                     </div>
                     <div className="serviceItem">
                         <div className="serviceName">Change Text Tone</div>
-                        <div className="relatedAbout">Lorem ipsum dolor sit amet consectetur adipisicing Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum quisquam delectus aliquam, nam </div>
+                        <div className="relatedAbout">loading....</div>
                     </div>
                     <div className="serviceItem">
                         <div className="serviceName">Photo Caption</div>
-                        <div className="relatedAbout">Lorem ipsum dolor sit amet consectetur adipisicing Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum quisquam delectus aliquam, nam </div>
+                        <div className="relatedAbout">loading....</div>
                     </div>
                     <div className="serviceItem">
                         <div className="serviceName">Image to Sumarize Content</div>
-                        <div className="relatedAbout">Lorem ipsum dolor sit amet consectetur adipisicing Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum quisquam delectus aliquam, nam </div>
+                        <div className="relatedAbout">loading...</div>
                     </div>
                     <div className="serviceItem">
                         <div className="serviceName">Image to Question-Answer</div>
@@ -133,4 +133,4 @@ const exploreServices = () => {
     )
 }
 
-export default exploreServices
+export default ExploreServices

@@ -1,19 +1,21 @@
 import { useState, useEffect } from 'react'
 import './css/home.css'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import ProjectContext from './context/projectContext';
 import Home from './components/support/home'
 import Explore from './components/explore';
 import About from './components/support/about';
 import Contact from './components/support/contact';
 import RequestFeature from './components/support/requestFeature';
-import TextToCode from './components/features/TextToCode';
 
 function App() {
 
   const backendURL = import.meta.env.VITE_REACT_BACKENDURL
 
   const router = createBrowserRouter([
+    {
+      path:'/testing',
+      element : <Testing/>
+    },
     {
       path: '/',
       element: <Home />

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import '../css/footer.css'
 
 
-const footer = (props) => {
+const Footer = (props) => {
 
   const resize = () => {
     const footer = document.querySelector('.footer')
@@ -71,4 +71,4 @@ const footer = (props) => {
   )
 }
 
-export default footer
+export default Footer

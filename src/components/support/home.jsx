@@ -1,10 +1,10 @@
 import React, { useEffect , useRef , useState } from 'react'
-import Part1 from '../home/part1'
-import Navbar from '../navbar'
-import Part2 from '../home/part2'
-import Footer from '../footer'
+import Part1 from '../home/Part1'
+import Navbar from '../Navbar'
+import Part2 from '../home/Part2'
+import Footer from '../Footer'
 
-const home = () => {
+const Home = () => {
     
     const navbarRef = useRef()
     const part1Ref = useRef()
@@ -58,4 +58,4 @@ const home = () => {
     )
 }
 
-export default home
+export default Home

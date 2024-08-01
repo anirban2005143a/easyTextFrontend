@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import '../css/navbar/navbar.css'
 import '../css/navbar/importedCss.css'
 
-const navbar = (props) => {
+const Navbar = (props) => {
 
     const navigate = useNavigate()
 
@@ -157,4 +157,4 @@ const navbar = (props) => {
     )
 }
 
-export default navbar
+export default Navbar

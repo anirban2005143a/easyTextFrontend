@@ -1,7 +1,7 @@
 import React from 'react'
-import Navbar from '../navbar'
+import Navbar from '../Navbar'
 
-const about = () => {
+const About = () => {
   return (
    <>
    <Navbar/>
@@ -9,4 +9,4 @@ const about = () => {
   )
 }
 
-export default about
+export default About

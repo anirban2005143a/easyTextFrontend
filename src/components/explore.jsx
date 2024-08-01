@@ -1,9 +1,9 @@
 import React, { useEffect, useState , useRef } from 'react'
-import Navbar from './navbar'
-import ExploreServices from './explore/exploreServices'
-import Footer from './footer'
+import Navbar from './Navbar'
+import ExploreServices from './explore/ExploreServices'
+import Footer from './Footer'
 
-const explore = () => {
+const Explore = () => {
     
     const footerRef = useRef()
 
@@ -43,4 +43,4 @@ const explore = () => {
     )
 }
 
-export default explore
+export default Explore
