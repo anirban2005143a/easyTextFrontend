@@ -1,11 +1,14 @@
 import { useState, useEffect } from 'react'
 import './css/home.css'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import ProjectContext from './context/projectContext';
 import Home from './components/support/home'
 import Explore from './components/explore';
 import About from './components/support/about';
 import Contact from './components/support/contact';
 import RequestFeature from './components/support/requestFeature';
+import Testing from './Testing.jsx'
+
 
 function App() {
 
@@ -36,10 +39,7 @@ function App() {
       path: '/explore',
       element: <Explore />
     },
-    {
-      path: '/python/execute',
-      element: <TextToCode />
-    },
+  
   ])
 
   return (

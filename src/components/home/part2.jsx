@@ -6,9 +6,6 @@ const Part2 = (props) => {
 
   const navigate = useNavigate()
 
-  const [serviceItemHeight, setserviceItemHeight] = useState(0)
-  const [isProgress, setisProgress] = useState(null)
-
   const resizeServiceItem = () => {
     const serviceList = document.querySelector('.homepart2 .serviceList')
     const serciceItemArr = Array.from(document.querySelectorAll('.homepart2 .serciceItem'))
@@ -75,7 +72,7 @@ const Part2 = (props) => {
 
 
   return (
-    <div ref={props.part2Ref} className={`homepart2 w-100 bg-black ${props.isPart2Visible ? 'visibility' : ''}`} style={{}}>
+    <div ref={props.part2Ref} className={`homepart2 w-100 bg-black ${props.isPart2Visible ? 'visibility' : ''}`} >
       <div className="serviceSection w-100 h-auto">
         <div className="title d-flex justify-content-center">
           <div id="title" className=' h1 fw-bold'>Explore More</div>

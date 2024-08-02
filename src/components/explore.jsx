@@ -1,7 +1,7 @@
 import React, { useEffect, useState , useRef } from 'react'
-import Navbar from './Navbar'
-import ExploreServices from './explore/ExploreServices'
-import Footer from './Footer'
+import ExploreServices from './explore/exploreServices.jsx'
+import Navbar from './navbar.jsx'
+import Footer from './footer.jsx'
 
 const Explore = () => {
     
