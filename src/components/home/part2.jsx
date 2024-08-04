@@ -80,7 +80,7 @@ const Part2 = (props) => {
 
         <div className="allservices w-100 h-auto">
           <div className="serviceList mx-md-4 mx-2 my-3 px-md-2 px-1 pt-2 d-flex flex-wrap justify-content-center align-items-center">
-            <div className="serciceItem mx-2 my-2 position-relative rounded-3 overflow-hidden text-center text-white">
+            <div className="serciceItem mx-2 my-2 position-relative rounded-3 overflow-hidden text-center text-white" onClick={()=>{navigate("/features/blog/content")}}>
               <div className='serviceName rounded-top-3 position-relative z-1 bg-black px-md-3 px-2 pt-md-3 pt-sm-2 pt-3 fs-4 fw-bold' > Blog Title</div>
               <div className='relatedContent rounded-bottom-3 bg-black position-relative z-1 fw-light text-center px-2 pb-4 pt-1' style={{ fontSize: "15px" }}>Give Blog to get quck blog title </div>
             </div>

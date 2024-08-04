@@ -33,7 +33,7 @@ const Footer = (props) => {
 
 
   return (
-    <div id='footer' ref={props.footerRef} className={`position-relative w-100 mb-4 ${props.isFooterVisible ? 'visibility' : ''}`} >
+    <div id='footer' ref={props.footerRef} className={` bg-black position-relative w-100 mb-4 ${props.isFooterVisible ? 'visibility' : ''}`} >
       <div className="footer w-100 d-flex flex-wrap ">
 
         <div className="services footerChild px-2 py-1 mt-3">

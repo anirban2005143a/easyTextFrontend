@@ -8,7 +8,7 @@ import About from './components/support/about';
 import Contact from './components/support/contact';
 import RequestFeature from './components/support/requestFeature';
 import Testing from './Testing.jsx'
-
+import BlogTitle from './components/features/blogTitle';
 
 function App() {
 
@@ -38,6 +38,10 @@ function App() {
     {
       path: '/explore',
       element: <Explore />
+    },
+    {
+      path: '/features/blog/content',
+      element: <BlogTitle />
     },
   
   ])

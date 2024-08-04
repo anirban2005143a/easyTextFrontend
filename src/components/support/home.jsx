@@ -62,9 +62,9 @@ const Home = () => {
         const part3Height = part3Ref.current.clientHeight
         const part4Height = part4Ref.current.clientHeight
 
-        !isPart2Visible && scrollHeight >= part1Height * 0.7 ? setisPart2Visible(true) : ''
-        !isPart3Visible && scrollHeight >= (part1Height + (part2Height )) ? setisPart3Visible(true) : ''
-        !isPart4Visible && scrollHeight >= (part1Height + part2Height + (part3Height * 0.9)) ? setisPart4Visible(true) : ''
+        !isPart3Visible && scrollHeight >= (part1Height * 0.7 ) ? setisPart3Visible(true) : ''
+        !isPart4Visible && scrollHeight >= (part1Height + part3Height *0.6 ) ? setisPart4Visible(true) : ''
+        !isPart2Visible && scrollHeight >= (part1Height + part3Height + (part4Height * 0.6)) ? setisPart2Visible(true) : ''
         !isFooterVisible && scrollHeight >= (part1Height + part2Height + part3Height + (part4Height * 0.5)) ? setisFooterVisible(true) : ''
 
     }
@@ -93,9 +93,9 @@ const Home = () => {
             <div className="homepage w-100 h-100 overflow-x-hidden bg-black">
                 <Navbar navbarRef={navbarRef} />
                 <Part1 part1Ref={part1Ref} />
-                <Part2 part2Ref={part2Ref} isPart2Visible={isPart2Visible} />
                 <Part3 part3Ref={part3Ref} isPart3Visible={isPart3Visible} />
                 <Part4 part4Ref={part4Ref} isPart4Visible={isPart4Visible} />
+                <Part2 part2Ref={part2Ref} isPart2Visible={isPart2Visible} />
                 <Footer footerRef={footerRef} isFooterVisible={isFooterVisible} />
             </div>
         </>
