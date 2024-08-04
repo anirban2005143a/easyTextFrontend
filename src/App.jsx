@@ -10,6 +10,8 @@ import RequestFeature from './components/support/requestFeature';
 import Testing from './Testing.jsx'
 import BlogTitle from './components/features/blogTitle';
 import BlogSummary from './components/features/blogSummary';
+import Login from './components/form/login';
+import Signup from "./components/form/signup"
 
 function App() {
 
@@ -47,6 +49,14 @@ function App() {
     {
       path: '/features/blog/summary',
       element: <BlogSummary />
+    },
+    {
+      path: '/login',
+      element: <Login />
+    },
+    {
+      path: '/signup',
+      element: <Signup />
     },
   
   ])

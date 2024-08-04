@@ -81,7 +81,7 @@ const Navbar = (props) => {
 
     return (
         <div ref={props.navbarRef} className='navbar position-absolute top-0 start-0 w-100  '>
-            <div className="navbarGroup w-100 pt-2 d-flex align-items-center ">
+            <div className="navbarGroup w-100 pt-2 d-flex align-items-center position-relative">
                 <div className="siteName mx-3 mb-2 fw-bolder ">
                     <div className="name " >Easy Text</div>
                 </div>
@@ -91,6 +91,16 @@ const Navbar = (props) => {
                     <Link to='/about'> <div className=' py-2 mx-md-3 mx-sm-2 mx-1 px-md-2 px-1 '>About</div></Link>
                     <div className=' py-2 mx-md-3 mx-sm-2 mx-1 px-md-2 px-1 services' clicked="false">Services</div>
                 </div>
+
+                <div className="authentication">
+                    <button className=' signup' onClick={() => { navigate("/signup") }}>
+                        Sign-up
+                    </button>
+                    <button className=' login' onClick={() => { navigate("/login") }}>
+                        Log-in
+                    </button>
+                </div>
+
             </div>
 
             <div className="allservices w-100 position-relative hidden ">
@@ -150,16 +160,9 @@ const Navbar = (props) => {
                 </div>
             </div>
 
-            <div className="authentication">
-                <button className=' signup'>
-                    Sign-up
-                </button>
-                <button  className=' login'>
-                    Log-in
-                </button>
-            </div>
 
-           {/* <div className="profile">
+
+            {/* <div className="profile">
                 <div className="profileImg"></div>
             </div> */}
         </div>
