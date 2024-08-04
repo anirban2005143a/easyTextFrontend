@@ -1,0 +1,50 @@
+.FeatureHeading{
+    font-size: 50px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    background-image: linear-gradient(45deg, aqua, #952bff, #ff669e, #952bff, aqua);
+    background-size: 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    animation: textBackground 12s linear 0s infinite;
+}
+.FeatureRelatedAbout{
+    width: 80%;
+    padding: 10px 15px;
+    font-size: 17px;
+    font-weight: 400;
+    color:beige ;
+    text-align: center;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.228);
+}
+#pythonExecution .FeatureInputSection{
+    margin-top: 50px;
+}
+#pythonExecution .FeatureOutput{
+    width: 75%;
+    overflow: auto;
+    scrollbar-width: thin;
+}
+
+.FeatureOutput .copyOutput {
+    position: absolute;
+    width: 80px;
+    right: 0;
+    cursor: pointer;
+    border: 1px solid grey;
+    display: flex;
+    justify-content: center;
+}
+
+.FeatureOutput .copyOutput:hover {
+    background-color: rgb(55, 55, 55);
+}
+#pythonExecution .FeatureOutput .generatedText{
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: white;
+    margin-top: 35px;
+}

@@ -1,15 +1,15 @@
 import { useState, useEffect } from 'react'
 import './css/home.css'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Home from './components/support/Home'
-import Explore from './components/Explore.jsx';
-import About from './components/support/About'
-import Contact from './components/support/Contact';
-import RequestFeature from './components/support/RequestFeature';
-import Testing from './Testing';
+import Home from './components/support/home'
+import Explore from './components/explore';
+import About from './components/support/about';
+import Contact from './components/support/contact';
+import RequestFeature from './components/support/requestFeature';
 
 function App() {
 
+  const backendURL = import.meta.env.VITE_REACT_BACKENDURL
 
   const router = createBrowserRouter([
     {
@@ -17,29 +17,37 @@ function App() {
       element : <Testing/>
     },
     {
-      path:'/',
-      element : <Home/>
+      path: '/',
+      element: <Home />
     },
     {
-      path:'/about',
-      element : <About/>
+      path: '/about',
+      element: <About />
     },
     {
-      path:'/contact',
-      element : <Contact/>
+      path: '/contact',
+      element: <Contact />
     },
     {
-      path:'/requestFeature',
-      element : <RequestFeature/>
+      path: '/requestFeature',
+      element: <RequestFeature />
     },
     {
-      path:'/explore',
-      element : <Explore/>
+      path: '/explore',
+      element: <Explore />
+    },
+    {
+      path: '/python/execute',
+      element: <TextToCode />
     },
   ])
 
   return (
-    <RouterProvider router={router} />
+    <ProjectContext.Provider value={{
+     backendURL
+    }}>
+      <RouterProvider router={router} />
+    </ProjectContext.Provider>
 
   )
 }
