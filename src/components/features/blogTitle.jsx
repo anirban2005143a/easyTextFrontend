@@ -28,14 +28,14 @@ const blogContent = () => {
         </div>
 
         <div className="inputSection flex justify-center  items-center px-8 my-6">
-          <div className="inputArea w-9/12 p-4 m-3 bg-stone-900 rounded-xl">
+          <div className="inputArea w-9/12 p-4 m-3 bg-zinc-900 rounded-xl">
 
             <div className="content text-zinc-200 text-base">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam amet nesciunt eos quos accusamus nobis quis ad, illo incidunt iusto reiciendis natus culpa eius excepturi error molestiae, voluptatum placeat atque.
             </div>
 
             <div className="textArea mt-10">
-              <textarea name="textArea" id="blogTitleTextArea" className=' text-base p-2 outline-none text-gray-100 rounded-md placeholder-zinc-200 bg-neutral-700 w-full min-h-28 max-h-80'
+              <textarea name="textArea" id="blogTitleTextArea" className=' text-base p-2 outline-none text-gray-800 rounded-md placeholder-zinc-200 bg-neutral-700 w-full min-h-28 max-h-80'
                 placeholder="Enter Your Blog Here">
               </textarea>
             </div>
@@ -79,14 +79,14 @@ const blogContent = () => {
                 <img className=' rounded-md w-full' src={demoImg1} />
               </div>
               <div className="content w-7/12 p-4">
-                <div className="heading text-2xl font-[700] text-orange-50 my-4">Blog quickoutcome</div>
+                <div className="heading text-2xl font-[700] text-orange-50 my-4">Blog summary</div>
                 <div className="relatedContent text-base font-[400] text-neutral-500">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur itaque illum amet inventore aliquam deleniti deserunt quis repellendus. Tempore sed accusantium esse provident blanditiis perspiciatis consequuntur ratione quae molestiae veniam!
                   Voluptatibus deserunt ipsam ducimus sapiente excepturi? Quos et cum ad placeat id neque doloribus soluta aliquid facilis assumenda officia, consectetur vero mollitia esse architecto rem. Perferendis obcaecati reiciendis rerum odit?
                 </div>
               </div>
 
             </div>
-            <div className="feature3 flex justify-center items-center p-6">
+            {/* <div className="feature3 flex justify-center items-center p-6">
               <div className="content w-7/12 p-4">
                 <div className="heading text-2xl font-[700] text-orange-50 my-4">Blog quickoutcome</div>
                 <div className="relatedContent text-base font-[400] text-neutral-500">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur itaque illum amet inventore aliquam deleniti deserunt quis repellendus. Tempore sed accusantium esse provident blanditiis perspiciatis consequuntur ratione quae molestiae veniam!
@@ -96,7 +96,7 @@ const blogContent = () => {
               <div className="image w-5/12 p-4">
                 <img className=' rounded-md w-full' src={demoImg1} />
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

@@ -159,9 +159,9 @@ const Navbar = (props) => {
                 </button>
             </div>
 
-           {!1===1 && <div className="profile">
+           {/* <div className="profile">
                 <div className="profileImg"></div>
-            </div>}
+            </div> */}
         </div>
     )
 }

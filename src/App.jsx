@@ -9,6 +9,7 @@ import Contact from './components/support/contact';
 import RequestFeature from './components/support/requestFeature';
 import Testing from './Testing.jsx'
 import BlogTitle from './components/features/blogTitle';
+import BlogSummary from './components/features/blogSummary';
 
 function App() {
 
@@ -42,6 +43,10 @@ function App() {
     {
       path: '/features/blog/content',
       element: <BlogTitle />
+    },
+    {
+      path: '/features/blog/summary',
+      element: <BlogSummary />
     },
   
   ])
