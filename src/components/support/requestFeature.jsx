@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
-import Navbar from '../Navbar'
-import Footer from '../Footer'
+import Navbar from '../navbar.jsx'
+import Footer from '../footer.jsx'
 import '../../css/support.css'
 
 const RequestFeature = () => {

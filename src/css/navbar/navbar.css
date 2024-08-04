@@ -52,6 +52,8 @@
     overflow: hidden;
 }
 .navbar .allservices .servicesList{
+    padding-top: 0.8rem;
+    padding-bottom: 4rem;
     margin-left: 15%;
     margin-right: 15%;
     background-image: linear-gradient(74deg, rgb(31 57 101), rgb(59 43 78), rgb(88 39 44));
@@ -76,8 +78,18 @@
     transform: translateY(-2px);
 }
 .navbar .allservices .servicesList .serviceItem div{
+    font-size: 1.2rem;
+    font-weight: 700;
     margin : 1px;
+    background-color: #cacaca;
 }
-.navbar .allservices .servicesList .serviceItem:hover div{
-    margin : 2px;
+.navbar .authentication{
+    position: absolute;
+    width: auto;
+    height: 100%;
+    top: 0;
+    right: 0;
+    padding: 0.8rem 1.5rem;
+    display: flex;
+    align-items: center;
 }

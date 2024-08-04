@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import BackgroundDesign from '../BackgroundDesign'
+import BackgroundDesign from '../backgroundDesign.jsx'
 import { Link } from 'react-router-dom'
 import '../../css/home.css'
 
@@ -30,10 +30,10 @@ const Part1 = (props) => {
 
       <div className="mainContent d-flex justify-content-center align-items-center" >
         <div className="contentBox position-relative rounded-4 overflow-hidden" style={{ height: "60%", padding: '1px' }}>
-          <div className="contents w-100 h-100 position-relative rounded-4 p-2 overflow-auto">
-            <div className="title mt-3">Text Generator</div>
+          <div className="homecontents rounded-4">
+            <div className="title">Text Generator</div>
             <div className="headline mx-3 my-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, dicta sapiente illo ipsam inventore harum, dignissimos repudiandae</div>
-            <div className="gettingStart d-flex justify-content-center mb-3">
+            <div className="gettingStart d-flex justify-content-center">
               <Link to="/explore" >
                 <button className=' px-3 py-1 rounded-3 my-3'>
                   <span className=' w-100 h-100 position-relative z-1'>Explore</span>
