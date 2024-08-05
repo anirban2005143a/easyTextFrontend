@@ -11,7 +11,7 @@ const Part2 = (props) => {
   const resizeServiceItem = () => {
     const serviceList = document.querySelector('.homepart2 .serviceList')
     const serciceItemArr = Array.from(document.querySelectorAll('.homepart2 .serciceItem'))
-    const width = serviceList ? serviceList.clientWidth : ''
+    const width = serviceList ? serviceList.clientWidth : ''  
 
     if (width && serciceItemArr.length !== 0) {
       width >= 850 ? serciceItemArr.forEach((item) => { item.style.width = `${width * 0.25 - 30}px` }) : ''
