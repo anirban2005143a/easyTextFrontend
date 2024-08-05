@@ -12,7 +12,7 @@ import BlogTitle from './components/features/blogTitle';
 import BlogSummary from './components/features/blogSummary';
 import Login from './components/form/login';
 import Signup from "./components/form/signup"
-
+import ForgotPassword from './components/form/forgotPassword';
 function App() {
 
   const backendURL = import.meta.env.VITE_REACT_BACKENDURL
@@ -33,6 +33,10 @@ function App() {
     {
       path: '/contact',
       element: <Contact />
+    },
+     {
+      path: '/forgot',
+      element: <ForgotPassword />
     },
     {
       path: '/requestFeature',

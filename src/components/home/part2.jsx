@@ -4,10 +4,6 @@ import {useNavigate} from 'react-router-dom'
 
 const Part2 = (props) => {
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 02e19745677cd28c1f7e94adda2adc5bf6d6415e
   const [serviceItemHeight, setserviceItemHeight] = useState(0)
   const [isProgress, setisProgress] = useState(null)
 
