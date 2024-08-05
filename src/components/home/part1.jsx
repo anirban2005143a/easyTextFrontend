@@ -6,10 +6,14 @@ import '../../css/home.css'
 const Part1 = (props) => {
 
   const resizePart1MainContent = () => {
-    window.innerWidth >= 950 ? document.querySelector('.homePart1').querySelector('.contentBox').style.width = '50%' : ''
-    800 <= window.innerWidth && window.innerWidth < 950 ? document.querySelector('.homePart1').querySelector('.contentBox').style.width = '65%' : ''
-    600 <= window.innerWidth && window.innerWidth < 800 ? document.querySelector('.homePart1').querySelector('.contentBox').style.width = '75%' : ''
-    window.innerWidth < 600 ? document.querySelector('.homePart1').querySelector('.contentBox').style.width = '85%' : ''
+    const homePart1 = document.querySelector('.homePart1')
+    console.log(homePart1)
+    if (homePart1) {
+      window.innerWidth >= 950 ? homePart1.querySelector('.contentBox').style.width = '50%' : ''
+      800 <= window.innerWidth && window.innerWidth < 950 ? homePart1.querySelector('.contentBox').style.width = '65%' : ''
+      600 <= window.innerWidth && window.innerWidth < 800 ? homePart1.querySelector('.contentBox').style.width = '75%' : ''
+      window.innerWidth < 600 ? homePart1.querySelector('.contentBox').style.width = '85%' : ''
+    }
 
   }
 
