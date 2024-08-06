@@ -1,16 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import '../../css/home.css'
-import {useNavigate} from 'react-router-dom'
 
 const Part2 = (props) => {
 
   const [serviceItemHeight, setserviceItemHeight] = useState(0)
   const [isProgress, setisProgress] = useState(null)
-<<<<<<< HEAD
-=======
-
->>>>>>> c91cc47b0c44c747a6c9160a55bd46d2a79b98a0
   const navigate = useNavigate()
 
   const resizeServiceItem = () => {

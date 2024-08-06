@@ -11,12 +11,8 @@ import BlogTitle from './components/features/blogTitle';
 import BlogSummary from './components/features/blogSummary';
 import Login from './components/form/login';
 import Signup from "./components/form/signup"
-<<<<<<< HEAD
 import Loadingui from './components/features/Loadingui.jsx';
-
-=======
 import ForgotPassword from './components/form/forgotPassword';
->>>>>>> c91cc47b0c44c747a6c9160a55bd46d2a79b98a0
 function App() {
 
   const backendURL = import.meta.env.VITE_REACT_BACKENDURL
