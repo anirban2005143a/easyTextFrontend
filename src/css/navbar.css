@@ -1,0 +1,83 @@
+.navbar{
+    z-index: 10;
+}
+.navbar .navbarGroup .siteName .name {
+    cursor: pointer;
+    font-size: 2rem;
+    font-weight: bolder;
+    background-image: linear-gradient(74deg, #3582ff, #a658ff, #ff6b7a, #9e49ff, #3a85ff);
+    background-size: 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    transition: all;
+    transition-duration: 500ms;
+    
+}
+.navbar .navbarGroup .siteName .name:hover{
+    scale: 1.05;
+    background-position: 100% 0;
+}
+.navbar .menubar{
+    background-image: linear-gradient(74deg, #42cffd, #e45dff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+.navbar .menubar div{
+    font-size: 20px;
+    font-weight: 400;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+.navbar .menubar div:hover{
+    font-weight: 600;
+}
+.navbar .menubar .services{
+    background: linear-gradient(74deg, #42cffd, #e45dff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+.navbar .allservices{
+    height: auto;
+    transition: all 300ms ease;
+}
+.navbar .allservices.hidden{
+    height: 0;
+    overflow: hidden;
+}
+.navbar .allservices .servicesList{
+    margin-left: 15%;
+    margin-right: 15%;
+    background-image: linear-gradient(74deg, rgb(31 57 101), rgb(59 43 78), rgb(88 39 44));
+}
+.navbar .allservices .servicesList .serviceItem::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    background: conic-gradient(
+        from -90deg,
+        cyan ,
+        violet ,
+        cyan
+    );
+}
+.navbar .allservices .servicesList .serviceItem:hover{
+    cursor: pointer;
+    transform: translateY(-2px);
+}
+.navbar .allservices .servicesList .serviceItem div{
+    margin : 1px;
+}
+.navbar .allservices .servicesList .serviceItem:hover div{
+    margin : 2px;
+}

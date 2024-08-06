@@ -7,11 +7,11 @@ import Explore from './components/explore';
 import About from './components/support/about';
 import Contact from './components/support/contact';
 import RequestFeature from './components/support/requestFeature';
-import Testing from './Testing.jsx'
 import BlogTitle from './components/features/blogTitle';
 import BlogSummary from './components/features/blogSummary';
 import Login from './components/form/login';
 import Signup from "./components/form/signup"
+import Loadingui from './components/features/Loadingui.jsx';
 
 function App() {
 
@@ -20,7 +20,7 @@ function App() {
   const router = createBrowserRouter([
     {
       path:'/testing',
-      element : <Testing/>
+      element : <Loadingui/>
     },
     {
       path: '/',
