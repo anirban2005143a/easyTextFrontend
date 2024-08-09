@@ -55,6 +55,10 @@ function App() {
       element: <BlogSummary />
     },
     {
+      path: '/features/blog/outcome',
+      element: <blog />
+    },
+    {
       path: '/login',
       element: <Login />
     },
