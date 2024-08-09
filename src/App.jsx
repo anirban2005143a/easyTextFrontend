@@ -7,11 +7,14 @@ import Explore from './components/explore';
 import About from './components/support/about';
 import Contact from './components/support/contact';
 import RequestFeature from './components/support/requestFeature';
-import Testing from './Testing.jsx'
 import BlogTitle from './components/features/blogTitle';
 import BlogSummary from './components/features/blogSummary';
 import Login from './components/form/login';
 import Signup from "./components/form/signup"
+import Loadingui from './components/features/Loadingui.jsx';
+import ForgotPassword from './components/form/forgotPassword';
+import Paragraph from './components/features/Paragraph';
+
 
 function App() {
 
@@ -20,7 +23,7 @@ function App() {
   const router = createBrowserRouter([
     {
       path:'/testing',
-      element : <Testing/>
+      element : <Loadingui/>
     },
     {
       path: '/',
@@ -34,6 +37,10 @@ function App() {
       path: '/contact',
       element: <Contact />
     },
+     {
+      path: '/forgot',
+      element: <ForgotPassword />
+    },
     {
       path: '/requestFeature',
       element: <RequestFeature />
@@ -41,6 +48,13 @@ function App() {
     {
       path: '/explore',
       element: <Explore />
+    }, {
+      path: '/login',
+      element: <Login />
+    },
+    {
+      path: '/signup',
+      element: <Signup />
     },
     {
       path: '/features/blog/content',
@@ -51,13 +65,10 @@ function App() {
       element: <BlogSummary />
     },
     {
-      path: '/login',
-      element: <Login />
+      path: '/features/paragraph',
+      element: <Paragraph />
     },
-    {
-      path: '/signup',
-      element: <Signup />
-    },
+   
   
   ])
 

@@ -1,41 +1,41 @@
 import React, { useContext, useState } from "react";
-import ProjectContext from "../../context/projectContext";
 import Navbar from "../navbar";
 // import '../../css/features/blogTitle.css'
 import demoImg1 from "/download (1).jpeg";
 import Footer from "../footer";
 import axios from "axios";
 import Loadingui from "./Loadingui.jsx";
+import ProjectContext from "../../context/projectContext";
 
-const blogContent = () => {
+const Paragraph = () => {
 
   const value = useContext(ProjectContext)
 
   const [prompt, setprompt] = useState("");
   const [data, setData] = useState("");
-  const [load, setLoad] = useState(false);
+  const [Loading, setLoading] = useState(false);
+  const [isOutputCome, setisOutputCome] = useState(false) //state to show output area when it come
   // after retriving the id from local then set that id into useris
 
   const fetch_data = async () => {
-    setLoad(true);
-    console.log(load)
+    setLoading(true);
     try {
       const userId = localStorage.getItem("userId");
       console.log(userId);
       const response = await axios.post(
-        `${value.backendURL}/data/api/v1/kol/Blogsummary`,
+        `${value.backendURL}/data/api/v1/kol/paragraph`,
         {
           userId,
           prompt,
         }
       );
       setData(response.data.data);
-      setLoad(false);
+      setLoading(false);
       console.log(response);
     } catch (error) {
-      setLoad(false);
-      console.log(error.response.data.message);
-      setData(error.response.data.message);
+      setLoading(false);
+      console.log(error);
+      // setData(error.response.data.message);
     }
   };
 
@@ -43,8 +43,8 @@ const blogContent = () => {
     backgroundImage:
       "linear-gradient(45deg,aqua ,#952bff, #ff669e , #952bff , aqua)",
     backgroundSize: "400%",
-    WebkitBackgroundClip: "text",
-    WebkitTextFillColor: "transparent",
+    webkitBackgroundClip: "text",
+    webkitTextFillColor: "transparent",
     backgroundClip: "text",
     color: "transparent",
     animation: "textBackground 30s linear 0s infinite",
@@ -59,18 +59,20 @@ const blogContent = () => {
             className="title text-center text-4xl font-[800] uppercase py-3"
             style={textBackground}
           >
-            Blog Summary
+            text to paragraph
           </div>
           <div className="relatedText text-center text-lg px-8 py-3 text-amber-100">
-          Provide a blog, and AI will generate a summary for you
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate,
+            corporis! Dolores rem nam explicabo nesciunt consequuntur
+            architecto, nobis cupiditate mollitia. Commodi reiciendis ab,
+            numquam tenetur cupiditate vel optio omnis vitae.
           </div>
         </div>
 
         <div className="inputSection flex justify-center  items-center px-8 my-6">
           <div className="inputArea w-9/12 p-4 m-3 bg-zinc-900 rounded-xl">
             <div className="textArea mt-2">
-              <input
-                type="textArea"
+              <textarea
                 value={prompt}
                 onChange={(e) => setprompt(e.target.value)}
                 placeholder="Enter Your Blog Here"
@@ -90,14 +92,13 @@ const blogContent = () => {
           </div>
         </div>
 
-        <div id="output" className="text-orange-600 flex justify-center  items-center ">
+        {isOutputCome && <div id="output" className="text-orange-600 flex justify-center  items-center ">
           <div className=" w-9/12 p-4 ml-6 bg-zinc-900 rounded-xl">
-          {load === "" ? "Give a prompt to see your answer here " : ""}
-          {load ? <Loadingui /> : <strong>{data}</strong>}
+        {Loading ? <Loadingui /> : <strong>{data}</strong>}
           </div>
-        </div>
+        </div>}
 
-        <div className="otherBlogFeatures">
+        {/* <div className="otherBlogFeatures">
           <div
             className="title text-center text-2xl font-[600]"
             style={textBackground}
@@ -148,11 +149,11 @@ const blogContent = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
       <Footer isFooterVisible={true} />
     </>
   );
 };
 
-export default blogContent;
+export default Paragraph;
