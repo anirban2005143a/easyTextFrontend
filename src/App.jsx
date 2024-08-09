@@ -11,10 +11,6 @@ import BlogTitle from './components/features/blogTitle';
 import BlogSummary from './components/features/blogSummary';
 import Login from './components/form/login';
 import Signup from "./components/form/signup"
-import Loadingui from './components/features/Loadingui.jsx';
-import ForgotPassword from './components/form/forgotPassword';
-import Paragraph from './components/features/Paragraph';
-
 
 function App() {
 

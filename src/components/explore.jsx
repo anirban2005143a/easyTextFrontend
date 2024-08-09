@@ -1,5 +1,5 @@
 import React, { useEffect, useState , useRef } from 'react'
-import ExploreServices from './explore/exploreServices'
+import ExploreServices from './explore/exploreServices.jsx'
 import Navbar from './navbar.jsx'
 import Footer from './footer.jsx'
 

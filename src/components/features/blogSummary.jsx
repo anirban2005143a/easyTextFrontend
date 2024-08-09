@@ -1,54 +1,19 @@
-import React, { useContext, useState } from "react";
-import ProjectContext from "../../context/projectContext";
-import Navbar from "../navbar";
-// import '../../css/features/blogTitle.css'
-import demoImg1 from "/download (1).jpeg";
-import Footer from "../footer";
-import axios from "axios";
-import Loadingui from "./Loadingui.jsx";
+import React from 'react'
+import Navbar from '../navbar'
+import Footer from '../footer'
+import demoImg1 from '/download (1).jpeg'
 
-const blogContent = () => {
+const blogSummary = () => {
 
-  const value = useContext(ProjectContext)
-
-  const [prompt, setprompt] = useState("");
-  const [data, setData] = useState("");
-  const [load, setLoad] = useState(false);
-  // after retriving the id from local then set that id into useris
-
-  const fetch_data = async () => {
-    setLoad(true);
-    console.log(load)
-    try {
-      const userId = localStorage.getItem("userId");
-      console.log(userId);
-      const response = await axios.post(
-        `${value.backendURL}/data/api/v1/kol/Blogsummary`,
-        {
-          userId,
-          prompt,
-        }
-      );
-      setData(response.data.data);
-      setLoad(false);
-      console.log(response);
-    } catch (error) {
-      setLoad(false);
-      console.log(error.response.data.message);
-      setData(error.response.data.message);
+    const textBackground = {
+        backgroundImage: "linear-gradient(45deg,aqua ,#952bff, #ff669e , #952bff , aqua)",
+        backgroundSize: "400%",
+        webkitBackgroundClip: "text",
+        webkitTextFillColor: "transparent",
+        backgroundClip: "text",
+        color: "transparent",
+        animation: "textBackground 30s linear 0s infinite",
     }
-  };
-
-  const textBackground = {
-    backgroundImage:
-      "linear-gradient(45deg,aqua ,#952bff, #ff669e , #952bff , aqua)",
-    backgroundSize: "400%",
-    WebkitBackgroundClip: "text",
-    WebkitTextFillColor: "transparent",
-    backgroundClip: "text",
-    color: "transparent",
-    animation: "textBackground 30s linear 0s infinite",
-  };
 
   return (
     <>
