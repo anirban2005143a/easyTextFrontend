@@ -11,8 +11,7 @@ import BlogTitle from './components/features/blogTitle';
 import BlogSummary from './components/features/blogSummary';
 import Login from './components/form/login';
 import Signup from "./components/form/signup"
-import Loadingui from './components/features/Loadingui.jsx';
-import ForgotPassword from './components/form/forgotPassword';
+
 function App() {
 
   const backendURL = import.meta.env.VITE_REACT_BACKENDURL
@@ -45,6 +44,13 @@ function App() {
     {
       path: '/explore',
       element: <Explore />
+    }, {
+      path: '/login',
+      element: <Login />
+    },
+    {
+      path: '/signup',
+      element: <Signup />
     },
     {
       path: '/features/blog/content',
@@ -55,6 +61,7 @@ function App() {
       element: <BlogSummary />
     },
     {
+<<<<<<< HEAD
       path: '/features/blog/outcome',
       element: <blog />
     },
@@ -65,7 +72,12 @@ function App() {
     {
       path: '/signup',
       element: <Signup />
+=======
+      path: '/features/paragraph',
+      element: <Paragraph />
+>>>>>>> 359501bce16a73aaca5a017339a2a3508ecedd38
     },
+   
   
   ])
 

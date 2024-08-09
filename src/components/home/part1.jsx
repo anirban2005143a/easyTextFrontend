@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import BackgroundDesign from '../BackgroundDesign.jsx'
+import BackgroundDesign from '../backgroundDesign.jsx'
 import { Link } from 'react-router-dom'
 import '../../css/home.css'
 

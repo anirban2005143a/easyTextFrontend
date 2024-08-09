@@ -98,7 +98,7 @@ const Part2 = (props) => {
               <div className='relatedContent rounded-bottom-3 bg-black position-relative z-1 fw-light text-center px-2 pb-4 pt-1' style={{ fontSize: "15px" }}>Give your blog for getting summary </div>
             </div>
          
-            <div className="serciceItem mx-2 my-2 position-relative rounded-3 overflow-hidden text-center text-white">
+            <div className="serciceItem mx-2 my-2 position-relative rounded-3 overflow-hidden text-center text-white" onClick={() => { navigate('/features/paragraph') }}>
               <div className='serviceName rounded-top-3 position-relative z-1 bg-black px-md-3 px-2 pt-md-3 pt-sm-2 pt-3 fs-4 fw-bold' > Paragraph</div>
               <div className='relatedContent rounded-bottom-3 bg-black position-relative z-1 fw-light text-center px-2 pb-4 pt-1' style={{ fontSize: "15px" }}>Give a summary to convert into paragraph</div>
             </div>
