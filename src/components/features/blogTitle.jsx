@@ -7,14 +7,13 @@ import Footer from "../footer";
 import axios from "axios";
 import Loadingui from "./Loadingui.jsx";
 
-const blogContent = () => {
+const blogTitle = () => {
 
   const value = useContext(ProjectContext)
 
   const [prompt, setprompt] = useState("");
-  const [data, setData] = useState("");
+  const [data, setData] = useState(null);
   const [Loading, setLoading] = useState(false);
-  const [isOutputCome, setisOutputCome] = useState(false) //state to show output area when it come
   // after retriving the id from local then set that id into useris
 
   const fetch_data = async () => {
@@ -92,7 +91,7 @@ const blogContent = () => {
           </div>
         </div>
 
-        {isOutputCome && <div id="output" className="text-orange-600 flex justify-center  items-center ">
+        {data && <div id="output" className="text-orange-600 flex justify-center  items-center ">
           <div className=" w-9/12 p-4 ml-6 bg-zinc-900 rounded-xl">
         {Loading ? <Loadingui /> : <strong>{data}</strong>}
           </div>
@@ -156,4 +155,4 @@ const blogContent = () => {
   );
 };
 
-export default blogContent;
+export default blogTitle;

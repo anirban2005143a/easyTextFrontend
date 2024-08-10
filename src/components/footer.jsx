@@ -38,32 +38,32 @@ const Footer = (props) => {
 
         <div className="services footerChild px-2 py-1 mt-3">
           <div className="ourServies" id="title"> All Services</div>
-          <div className="ourServies"><span> Blog </span></div>
-          <div className="ourServies"><span> Advertisment</span></div>
-          <div className="ourServies"><span> Email Writing</span></div>
-          <div className="ourServies"><span> Youtube Video Content</span></div>
-          <div className="ourServies"><span> Text Edit</span></div>
-          <div className="ourServies"><span> Summarize and Extend</span></div>
-          <div className="ourServies"><span> Analyze Images</span></div>
-          <div className="ourServies"><span> Analyze Audio</span></div>
-          <div className="ourServies"><span> Get and Execute Python</span></div>
-          <div className="ourServies"><span> Get json Object</span></div>
+          <div className="ourServies"><div> Blog </div></div>
+          <div className="ourServies"><div> Advertisment</div></div>
+          <div className="ourServies"><div> Email Writing</div></div>
+          <div className="ourServies"><div> Youtube Video Content</div></div>
+          <div className="ourServies"><div> Text Edit</div></div>
+          <div className="ourServies"><div> Summarize and Extend</div></div>
+          <div className="ourServies"><div> Analyze Images</div></div>
+          <div className="ourServies"><div> Analyze Audio</div></div>
+          <div className="ourServies"><div> Get and Execute Python</div></div>
+          <div className="ourServies"><div> Get json Object</div></div>
         </div>
 
         <div className="keyFeatures footerChild px-2 py-1 mt-3">
           <div className="keys" id="title"> Features</div>
-          <div className="keys"><span> Image Analyzation</span></div>
-          <div className="keys"><span> Audio Analyzation</span></div>
-          <div className="keys"><span> Code Execution</span></div>
-          <div className="keys"><span> Json Object</span></div>
+          <div className="keys"><div> Image Analyzation</div></div>
+          <div className="keys"><div> Audio Analyzation</div></div>
+          <div className="keys"><div> Code Execution</div></div>
+          <div className="keys"><div> Json Object</div></div>
         </div>
 
         <div className="support footerChild px-2 py-1 mt-3">
           <div className="supportItem" id="title"> Support</div>
-          <div className="supportItem"> <Link className=' text-decoration-none' to="/"> <span> Home</span></Link></div>
-          <div className="supportItem"> <Link className=' text-decoration-none' to="/about"> <span> About</span></Link></div>
-          <div className="supportItem"> <Link className=' text-decoration-none' to="/contact"> <span> Contact</span></Link></div>
-          <div className="supportItem"> <Link className=' text-decoration-none' to="/requestFeature"> <span> Request a new feature</span></Link></div>
+          <div className="supportItem"> <Link className=' text-decoration-none' to="/"> <div> Home</div></Link></div>
+          <div className="supportItem"> <Link className=' text-decoration-none' to="/about"> <div> About</div></Link></div>
+          <div className="supportItem"> <Link className=' text-decoration-none' to="/contact"> <div> Contact</div></Link></div>
+          <div className="supportItem"> <Link className=' text-decoration-none' to="/requestFeature"> <div> Request a new feature</div></Link></div>
         </div>
 
       </div>

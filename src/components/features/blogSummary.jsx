@@ -7,18 +7,17 @@ import Footer from "../footer";
 import axios from "axios";
 import Loadingui from "./Loadingui.jsx";
 
-const blogContent = () => {
+const blogSummary = () => {
 
   const value = useContext(ProjectContext)
 
   const [prompt, setprompt] = useState("");
-  const [data, setData] = useState("");
-  const [load, setLoad] = useState(false);
+  const [data, setData] = useState(null);
+  const [Loading, setLoading] = useState(false);
   // after retriving the id from local then set that id into useris
 
   const fetch_data = async () => {
-    setLoad(true);
-    console.log(load)
+    setLoading(true);
     try {
       const userId = localStorage.getItem("userId");
       console.log(userId);
@@ -30,10 +29,10 @@ const blogContent = () => {
         }
       );
       setData(response.data.data);
-      setLoad(false);
+      setLoading(false);
       console.log(response);
     } catch (error) {
-      setLoad(false);
+      setLoading(false);
       console.log(error.response.data.message);
       setData(error.response.data.message);
     }
@@ -90,12 +89,13 @@ const blogContent = () => {
           </div>
         </div>
 
-        <div id="output" className="text-orange-600 flex justify-center  items-center ">
+        
+        {data && <div id="output" className="text-orange-600 flex justify-center  items-center ">
           <div className=" w-9/12 p-4 ml-6 bg-zinc-900 rounded-xl">
-          {load === "" ? "Give a prompt to see your answer here " : ""}
-          {load ? <Loadingui /> : <strong>{data}</strong>}
+        {Loading ? <Loadingui /> : <strong>{data}</strong>}
           </div>
-        </div>
+        </div>}
+
 
         <div className="otherBlogFeatures">
           <div
@@ -155,4 +155,4 @@ const blogContent = () => {
   );
 };
 
-export default blogContent;
+export default blogSummary;

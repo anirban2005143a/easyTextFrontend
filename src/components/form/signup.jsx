@@ -41,7 +41,7 @@ const [formData, setFormData] = useState({
                 <div className="formContainer">
                     <form onSubmit={handleSubmit} className="form p-10 " action="">
                         <p className="title font-[500]">Create Account</p>
-                        <input type="text" onChange={handleChange} name ="username" placeholder="username" value={formData.username} className="username input w-full" />
+                        <input type="text" onChange={handleChange} name ="username" placeholder="Username" value={formData.username} className="username input w-full" />
                         <input type='email' onChange={handleChange} name ="email" placeholder="Enter email" value={formData.email} className="username input w-full" />
                         <input type="password" onChange={handleChange} name = "password" placeholder="Password" value ={formData.password} className="password input w-full" />
                         <button className="btn font-[700]" type="submit">Create</button>

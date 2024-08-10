@@ -1,16 +1,17 @@
 import React, { useContext, useState } from "react";
-import Navbar from "../navbar";
+import ProjectContext from "../../context/projectContext";
+import Navbar from "../navbar.jsx";
 // import '../../css/features/blogTitle.css'
 import demoImg1 from "/download (1).jpeg";
-import Footer from "../footer";
+import Footer from "../footer.jsx";
 import axios from "axios";
 import Loadingui from "./Loadingui.jsx";
-import ProjectContext from "../../context/projectContext";
 
-const Paragraph = () => {
+const Promotion = () => {
 
   const value = useContext(ProjectContext)
 
+  
   const [prompt, setprompt] = useState("");
   const [data, setData] = useState(null);
   const [Loading, setLoading] = useState(false);
@@ -22,7 +23,7 @@ const Paragraph = () => {
       const userId = localStorage.getItem("userId");
       console.log(userId);
       const response = await axios.post(
-        `${value.backendURL}/data/api/v1/kol/paragraph`,
+        `${value.backendURL}/data/api/v1/kol/promotion`,
         {
           userId,
           prompt,
@@ -33,8 +34,8 @@ const Paragraph = () => {
       console.log(response);
     } catch (error) {
       setLoading(false);
-      console.log(error);
-      // setData(error.response.data.message);
+      console.log(error.response.data.message);
+      setData(error.response.data.message);
     }
   };
 
@@ -58,13 +59,10 @@ const Paragraph = () => {
             className="title text-center text-4xl font-[800] uppercase py-3"
             style={textBackground}
           >
-            text to paragraph
+            Blog outcome
           </div>
           <div className="relatedText text-center text-lg px-8 py-3 text-amber-100">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate,
-            corporis! Dolores rem nam explicabo nesciunt consequuntur
-            architecto, nobis cupiditate mollitia. Commodi reiciendis ab,
-            numquam tenetur cupiditate vel optio omnis vitae.
+            Provide a blog, and AI will generate a quick note for you
           </div>
         </div>
 
@@ -91,13 +89,13 @@ const Paragraph = () => {
           </div>
         </div>
 
-
         {data && <div id="output" className="text-orange-600 flex justify-center  items-center ">
           <div className=" w-9/12 p-4 ml-6 bg-zinc-900 rounded-xl">
             {Loading ? <Loadingui /> : <strong>{data}</strong>}
           </div>
         </div>}
-        {/* <div className="otherBlogFeatures">
+
+        <div className="otherBlogFeatures">
           <div
             className="title text-center text-2xl font-[600]"
             style={textBackground}
@@ -148,11 +146,12 @@ const Paragraph = () => {
               </div>
             </div>
           </div>
-        </div> */}
+        </div>
+
       </div>
       <Footer isFooterVisible={true} />
     </>
   );
 };
 
-export default Paragraph;
+export default Promotion;

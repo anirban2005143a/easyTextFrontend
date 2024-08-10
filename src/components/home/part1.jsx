@@ -7,7 +7,6 @@ const Part1 = (props) => {
 
   const resizePart1MainContent = () => {
     const homePart1 = document.querySelector('.homePart1')
-    console.log(homePart1)
     if (homePart1) {
       window.innerWidth >= 950 ? homePart1.querySelector('.contentBox').style.width = '50%' : ''
       800 <= window.innerWidth && window.innerWidth < 950 ? homePart1.querySelector('.contentBox').style.width = '65%' : ''

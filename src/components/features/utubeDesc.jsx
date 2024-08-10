@@ -1,35 +1,39 @@
-import React, { useState } from "react";
-import Navbar from "../navbar";
+import React, { useContext, useState } from "react";
+import ProjectContext from "../../context/projectContext";
+import Navbar from "../navbar.jsx";
 // import '../../css/features/blogTitle.css'
 import demoImg1 from "/download (1).jpeg";
-import Footer from "../footer";
+import Footer from "../footer.jsx";
 import axios from "axios";
 import Loadingui from "./Loadingui.jsx";
 
-const blogContent = () => {
+const UtubeDesc = () => {
+
+  const value = useContext(ProjectContext)
+
+  
   const [prompt, setprompt] = useState("");
-  const [data, setData] = useState("");
-  const [load, setLoad] = useState(false);
+  const [data, setData] = useState(null);
+  const [Loading, setLoading] = useState(false);
   // after retriving the id from local then set that id into useris
 
   const fetch_data = async () => {
-    setLoad(true);
-    console.log(load)
+    setLoading(true);
     try {
       const userId = localStorage.getItem("userId");
       console.log(userId);
       const response = await axios.post(
-        "http://localhost:1250/data/api/v1/kol/Blogsummary",
+        `${value.backendURL}/data/api/v1/kol/Blogtitle`,
         {
           userId,
           prompt,
         }
       );
       setData(response.data.data);
-      setLoad(false);
+      setLoading(false);
       console.log(response);
     } catch (error) {
-      setLoad(false);
+      setLoading(false);
       console.log(error.response.data.message);
       setData(error.response.data.message);
     }
@@ -58,15 +62,14 @@ const blogContent = () => {
             Blog outcome
           </div>
           <div className="relatedText text-center text-lg px-8 py-3 text-amber-100">
-          Provide a blog, and AI will generate a quick note for you
+            Provide a blog, and AI will generate a quick note for you
           </div>
         </div>
 
         <div className="inputSection flex justify-center  items-center px-8 my-6">
           <div className="inputArea w-9/12 p-4 m-3 bg-zinc-900 rounded-xl">
             <div className="textArea mt-2">
-              <input
-                type="textArea"
+              <textarea
                 value={prompt}
                 onChange={(e) => setprompt(e.target.value)}
                 placeholder="Enter Your Blog Here"
@@ -86,12 +89,11 @@ const blogContent = () => {
           </div>
         </div>
 
-        <div id="output" className="text-orange-600 flex justify-center  items-center ">
+        {data && <div id="output" className="text-orange-600 flex justify-center  items-center ">
           <div className=" w-9/12 p-4 ml-6 bg-zinc-900 rounded-xl">
-          {load === "" ? "Give a prompt to see your answer here " : ""}
-          {load ? <Loadingui /> : <strong>{data}</strong>}
+            {Loading ? <Loadingui /> : <strong>{data}</strong>}
           </div>
-        </div>
+        </div>}
 
         <div className="otherBlogFeatures">
           <div
@@ -145,10 +147,11 @@ const blogContent = () => {
             </div>
           </div>
         </div>
+
       </div>
       <Footer isFooterVisible={true} />
     </>
   );
 };
 
-export default blogContent;
+export default UtubeDesc;
