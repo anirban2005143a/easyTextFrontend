@@ -11,6 +11,10 @@ import BlogTitle from './components/features/blogTitle';
 import BlogSummary from './components/features/blogSummary';
 import Login from './components/form/login';
 import Signup from "./components/form/signup"
+import Loadingui from './components/features/Loadingui.jsx';
+import ForgotPassword from './components/form/forgotPassword';
+import Paragraph from './components/features/Paragraph';
+
 
 function App() {
 
@@ -61,21 +65,8 @@ function App() {
       element: <BlogSummary />
     },
     {
-<<<<<<< HEAD
-      path: '/features/blog/outcome',
-      element: <blog />
-    },
-    {
-      path: '/login',
-      element: <Login />
-    },
-    {
-      path: '/signup',
-      element: <Signup />
-=======
       path: '/features/paragraph',
       element: <Paragraph />
->>>>>>> 359501bce16a73aaca5a017339a2a3508ecedd38
     },
    
   

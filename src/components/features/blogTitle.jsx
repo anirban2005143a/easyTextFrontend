@@ -1,5 +1,6 @@
-import React from 'react'
-import Navbar from '../navbar'
+import React, { useContext, useState } from "react";
+import ProjectContext from "../../context/projectContext";
+import Navbar from "../navbar";
 // import '../../css/features/blogTitle.css'
 import demoImg1 from "/download (1).jpeg";
 import Footer from "../footer";
@@ -7,6 +8,36 @@ import axios from "axios";
 import Loadingui from "./Loadingui.jsx";
 
 const blogContent = () => {
+
+  const value = useContext(ProjectContext)
+
+  const [prompt, setprompt] = useState("");
+  const [data, setData] = useState("");
+  const [Loading, setLoading] = useState(false);
+  const [isOutputCome, setisOutputCome] = useState(false) //state to show output area when it come
+  // after retriving the id from local then set that id into useris
+
+  const fetch_data = async () => {
+    setLoading(true);
+    try {
+      const userId = localStorage.getItem("userId");
+      console.log(userId);
+      const response = await axios.post(
+        `${value.backendURL}/data/api/v1/kol/Blogtitle`,
+        {
+          userId,
+          prompt,
+        }
+      );
+      setData(response.data.data);
+      setLoading(false);
+      console.log(response);
+    } catch (error) {
+      setLoading(false);
+      console.log(error.response.data.message);
+      setData(error.response.data.message);
+    }
+  };
 
   const textBackground = {
     backgroundImage:
@@ -40,15 +71,13 @@ const blogContent = () => {
 
         <div className="inputSection flex justify-center  items-center px-8 my-6">
           <div className="inputArea w-9/12 p-4 m-3 bg-zinc-900 rounded-xl">
-
-            <div className="content text-zinc-200 text-base">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam amet nesciunt eos quos accusamus nobis quis ad, illo incidunt iusto reiciendis natus culpa eius excepturi error molestiae, voluptatum placeat atque.
-            </div>
-
-            <div className="textArea mt-10">
-              <textarea name="textArea" id="blogTitleTextArea" className=' text-base p-2 outline-none text-gray-800 rounded-md placeholder-zinc-200 bg-neutral-700 w-full min-h-28 max-h-80'
-                placeholder="Enter Your Blog Here">
-              </textarea>
+            <div className="textArea mt-2">
+              <textarea
+                value={prompt}
+                onChange={(e) => setprompt(e.target.value)}
+                placeholder="Enter Your Blog Here"
+                className="text-base p-2 outline-none text-white rounded-md placeholder-zinc-200 bg-gray-700 w-full min-h-28 max-h-80"
+              />
             </div>
 
             <div className="generateBtn flex justify-center my-6">
@@ -61,14 +90,13 @@ const blogContent = () => {
               </button>
             </div>
           </div>
-          <div className="animationArea w-3/12 bg-slate-700">
-            <img className='w-full object-cover' src={demoImg1} />
+        </div>
+
+        {isOutputCome && <div id="output" className="text-orange-600 flex justify-center  items-center ">
+          <div className=" w-9/12 p-4 ml-6 bg-zinc-900 rounded-xl">
+        {Loading ? <Loadingui /> : <strong>{data}</strong>}
           </div>
-        </div>
-
-        <div id="output">
-
-        </div>
+        </div>}
 
         <div className="otherBlogFeatures">
           <div
