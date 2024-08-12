@@ -19,22 +19,23 @@ const blogTitle = () => {
   const fetch_data = async () => {
     setLoading(true);
     try {
+      console.log("aaagyuae")
       const userId = localStorage.getItem("userId");
-      console.log(userId);
-      const response = await axios.post(
-        `${value.backendURL}/data/api/v1/kol/Blogtitle`,
+      const response = await axios.post(`${value.backendURL}/data/api/v1/kol/Blogtitle`,
         {
           userId,
           prompt,
         }
       );
-      setData(response.data.data);
-      setLoading(false);
       console.log(response);
+      // // setData(response.data.data);
+      // setLoading(false);
+      // console.log(response);
     } catch (error) {
-      setLoading(false);
-      console.log(error.response.data.message);
-      setData(error.response.data.message);
+      console.log(error); 
+      // setLoading(false);
+      // console.log(error.response.data.message);
+      // setData(error.response.data.message);
     }
   };
 
