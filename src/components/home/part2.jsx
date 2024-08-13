@@ -118,7 +118,7 @@ const Part2 = (props) => {
               <div className='serviceName rounded-top-3 position-relative z-1 bg-black px-md-3 px-2 pt-md-3 pt-sm-2 pt-3 fs-4 fw-bold' > Video Title</div>
               <div className='relatedContent rounded-bottom-3 bg-black position-relative z-1 fw-light text-center px-2 pb-4 pt-1' style={{ fontSize: "15px" }}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta quos dolorum rerum maiores qui </div>
             </div>
-            <div className="serciceItem mx-2 my-2 position-relative rounded-3 overflow-hidden text-center text-white">
+            <div className="serciceItem mx-2 my-2 position-relative rounded-3 overflow-hidden text-center text-white" onClick={() => { navigate('/features/text/formate') }} >
               <div className='serviceName rounded-top-3 position-relative z-1 bg-black px-md-3 px-2 pt-md-3 pt-sm-2 pt-3 fs-4 fw-bold' > Text Formate</div>
               <div className='relatedContent rounded-bottom-3 bg-black position-relative z-1 fw-light text-center px-2 pb-4 pt-1' style={{ fontSize: "15px" }}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta quos dolorum rerum maiores qui </div>
             </div>

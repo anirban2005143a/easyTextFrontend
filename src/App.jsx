@@ -9,7 +9,7 @@ import Contact from './components/support/contact';
 import RequestFeature from './components/support/requestFeature';
 import Login from './components/form/login';
 import Signup from "./components/form/signup"
-import Loadingui from './components/features/Loadingui.jsx';
+import Loadingui from './components/Loadingui.jsx';
 import ForgotPassword from './components/form/forgotPassword';
 import BlogTitle from './components/features/blogTitle';
 import BlogSummary from './components/features/blogSummary';
@@ -20,6 +20,7 @@ import Promotion from './components/features/promotion';
 import UtubeDesc from './components/features/utubeDesc';
 import UtubeTitle from './components/features/utubeTitle';
 import JobRole from './components/features/jobRole';
+import TextFormate from './components/features/textFormate';
 
 function App() {
 
@@ -96,6 +97,10 @@ function App() {
     {
       path: '/features/jobrole',
       element: <JobRole />
+    },
+    {
+      path: '/features/text/formate',
+      element: <TextFormate />
     },
    
   

@@ -5,7 +5,7 @@ import Navbar from "../navbar.jsx";
 import demoImg1 from "/download (1).jpeg";
 import Footer from "../footer.jsx";
 import axios from "axios";
-import Loadingui from "./Loadingui.jsx";
+import Loadingui from "../Loadingui.jsx";
 
 const UtubeTitle = () => {
 
@@ -52,22 +52,22 @@ const UtubeTitle = () => {
 
   return (
     <>
-      <Navbar />
-      <div className="bg-black" id="blogTitle">
+         <Navbar />
+      <div className="bg-black" id="utubeTitle">
         <div className="introduction mt-28 ">
           <div
-            className="title text-center text-4xl font-[800] uppercase py-3"
+            className="title text-center text-3xl font-[800] uppercase py-3"
             style={textBackground}
           >
-            Blog outcome
+            Video Title
           </div>
           <div className="relatedText text-center text-lg px-8 py-3 text-amber-100">
-            Provide a blog, and AI will generate a quick note for you
+          Generate catchy and effective YouTube video titles effortlessly. Input your video details and receive engaging titles that grab attention and boost your video's visibility.
           </div>
         </div>
 
-        <div className="inputSection flex justify-center  items-center px-8 my-6">
-          <div className="inputArea w-9/12 p-4 m-3 bg-zinc-900 rounded-xl">
+        <div className="inputSection flex justify-center  items-center  my-6">
+          <div className="inputArea md:w-9/12 sm:w-11/12 w-full md:p-4 p-2 m-3 bg-zinc-900 rounded-xl">
             <div className="textArea mt-2">
               <textarea
                 value={prompt}
@@ -89,65 +89,17 @@ const UtubeTitle = () => {
           </div>
         </div>
 
+        {Loading && <div className="loadng">
+          <Loadingui />
+        </div>}
+
         {data && <div id="output" className="text-orange-600 flex justify-center  items-center ">
-          <div className=" w-9/12 p-4 ml-6 bg-zinc-900 rounded-xl">
-            {Loading ? <Loadingui /> : <strong>{data}</strong>}
+          <div className=" md:w-9/12 sm:w-11/12 w-full md:p-4 p-2 bg-zinc-900 rounded-xl">
+            <pre className=" whitespace-pre-wrap break-words">{data}</pre>
           </div>
         </div>}
 
-        <div className="otherBlogFeatures">
-          <div
-            className="title text-center text-2xl font-[600]"
-            style={textBackground}
-          >
-            Check out other blog features
-          </div>
-          <div className="otherBlogsFeature">
-            <div className="feature1 flex justify-center items-center p-6">
-              <div className="content w-7/12 p-4">
-                <div className="heading text-2xl font-[700] text-orange-50 my-4">
-                  Blog quickoutcome
-                </div>
-                <div className="relatedContent text-base font-[400] text-neutral-500">
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Pariatur itaque illum amet inventore aliquam deleniti deserunt
-                  quis repellendus. Tempore sed accusantium esse provident
-                  blanditiis perspiciatis consequuntur ratione quae molestiae
-                  veniam! Voluptatibus deserunt ipsam ducimus sapiente
-                  excepturi? Quos et cum ad placeat id neque doloribus soluta
-                  aliquid facilis assumenda officia, consectetur vero mollitia
-                  esse architecto rem. Perferendis obcaecati reiciendis rerum
-                  odit?
-                </div>
-              </div>
-              <div className="image w-5/12 p-4">
-                <img className=" rounded-md w-full" src={demoImg1} />
-              </div>
-            </div>
-            <div className="feature2 flex justify-center items-center p-6">
-              <div className="image w-5/12 p-4">
-                <img className=" rounded-md w-full" src={demoImg1} />
-              </div>
-              <div className="content w-7/12 p-4">
-                <div className="heading text-2xl font-[700] text-orange-50 my-4">
-                  Blog summary
-                </div>
-                <div className="relatedContent text-base font-[400] text-neutral-500">
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Pariatur itaque illum amet inventore aliquam deleniti deserunt
-                  quis repellendus. Tempore sed accusantium esse provident
-                  blanditiis perspiciatis consequuntur ratione quae molestiae
-                  veniam! Voluptatibus deserunt ipsam ducimus sapiente
-                  excepturi? Quos et cum ad placeat id neque doloribus soluta
-                  aliquid facilis assumenda officia, consectetur vero mollitia
-                  esse architecto rem. Perferendis obcaecati reiciendis rerum
-                  odit?
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
+        
       </div>
       <Footer isFooterVisible={true} />
     </>
