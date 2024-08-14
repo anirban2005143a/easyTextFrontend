@@ -1,11 +1,13 @@
-import { React, useState } from 'react'
+import { React, useState, useContext } from 'react'
+import ProjectContext from '../../context/projectContext'
 import '../../css/form.css'
 import Navbar from '../navbar'
 import axios from 'axios'
 import { useNavigate, Link } from 'react-router-dom'
 const login = () => {
 
-
+  const value = useContext(ProjectContext)
+  const navigate = useNavigate()
 
   const [formData, setFormData] = useState({
     email: '',
@@ -20,9 +22,15 @@ const login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const currentTarget = e.currentTarget
+    currentTarget.querySelector('button').disabled = true
+    currentTarget.querySelector('button').innerHTML = "Please wait"
     try {
-      const response = await axios.post('http://localhost:3000/user/login', formData);
+      const response = await axios.post(`${value.backendURL}/user/login`, formData);
       console.log(response.data);
+      currentTarget.querySelector('button').disabled = false
+      currentTarget.querySelector('button').innerHTML = "Login"
+      navigate('/')
       alert('logged in succesfully');
     } catch (error) {
       console.error(error);
@@ -41,14 +49,6 @@ const login = () => {
             <input placeholder="Enter email" name="email" value={formData.email} onChange={handleChange} className="username input w-full" />
             <input placeholder="Password" name="password" value={formData.password} onChange={handleChange} className="password input w-full" type="password" />
             <button className="btn font-[700]" type="submit">Login</button>
-            <div className="text-sm leading-5 pt-7">
-              <Link
-                to="/forgot"
-                className="font-medium text-base text-indigo-200  hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150"
-              >
-                Forgot your password?
-              </Link>
-            </div>
           </form>
         </div>
       </div>

@@ -11,7 +11,7 @@ const SocialMediaPost = () => {
 
   const value = useContext(ProjectContext)
 
-  
+
   const [prompt, setprompt] = useState("");
   const [data, setData] = useState(null);
   const [Loading, setLoading] = useState(false);
@@ -52,20 +52,17 @@ const SocialMediaPost = () => {
 
   return (
     <>
-       <Navbar />
+      <Navbar />
       <div className="bg-black" id="socialMedia">
         <div className="introduction mt-28 ">
           <div
             className="title text-center text-3xl font-[800] uppercase py-3"
             style={textBackground}
           >
-           SOcial Media Content
+            SOcial Media Content
           </div>
           <div className="relatedText text-center text-lg px-8 py-3 text-amber-100">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate,
-            corporis! Dolores rem nam explicabo nesciunt consequuntur
-            architecto, nobis cupiditate mollitia. Commodi reiciendis ab,
-            numquam tenetur cupiditate vel optio omnis vitae.
+            Transform your text effortlessly into engaging social media content with our new feature. Perfectly optimized for posts across all platforms, making content creation quicker and easier than ever!
           </div>
         </div>
 
@@ -79,6 +76,13 @@ const SocialMediaPost = () => {
                 className="text-base p-2 outline-none text-white rounded-md placeholder-zinc-200 bg-gray-700 w-full min-h-28 max-h-80"
               />
             </div>
+            {/* <div className="">
+                  <i className="fab fa-facebook-f"></i>
+                  <i className="fab fa-twitter"></i>
+                  <i className="fab fa-instagram"></i>
+                  <i className="fab fa-linkedin-in"></i>
+             
+              </div> */}
 
             <div className="generateBtn flex justify-center my-6">
               <button
@@ -96,13 +100,13 @@ const SocialMediaPost = () => {
           <Loadingui />
         </div>}
 
-        {data && <div id="output" className="text-orange-600 flex justify-center  items-center ">
+        {data && <div id="output" className=" flex justify-center  items-center " style={{color:"rgb(255 250 226)"}}>
           <div className=" md:w-9/12 sm:w-11/12 w-full md:p-4 p-2 bg-zinc-900 rounded-xl">
             <pre className=" whitespace-pre-wrap break-words">{data}</pre>
           </div>
         </div>}
 
-       
+
       </div>
       <Footer isFooterVisible={true} />
     </>

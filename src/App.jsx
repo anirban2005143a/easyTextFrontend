@@ -21,6 +21,7 @@ import UtubeDesc from './components/features/utubeDesc';
 import UtubeTitle from './components/features/utubeTitle';
 import JobRole from './components/features/jobRole';
 import TextFormate from './components/features/textFormate';
+import PhotoCaption from './components/features/photoCaption';
 
 function App() {
 
@@ -101,6 +102,10 @@ function App() {
     {
       path: '/features/text/formate',
       element: <TextFormate />
+    },
+    {
+      path: '/features/pcaption',
+      element: <PhotoCaption />
     },
    
   

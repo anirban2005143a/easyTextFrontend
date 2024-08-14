@@ -11,7 +11,7 @@ const UtubeTitle = () => {
 
   const value = useContext(ProjectContext)
 
-  
+
   const [prompt, setprompt] = useState("");
   const [data, setData] = useState(null);
   const [Loading, setLoading] = useState(false);
@@ -52,7 +52,7 @@ const UtubeTitle = () => {
 
   return (
     <>
-         <Navbar />
+      <Navbar />
       <div className="bg-black" id="utubeTitle">
         <div className="introduction mt-28 ">
           <div
@@ -62,7 +62,7 @@ const UtubeTitle = () => {
             Video Title
           </div>
           <div className="relatedText text-center text-lg px-8 py-3 text-amber-100">
-          Generate catchy and effective YouTube video titles effortlessly. Input your video details and receive engaging titles that grab attention and boost your video's visibility.
+            Generate catchy and effective YouTube video titles effortlessly. Input your video details and receive engaging titles that grab attention and boost your video's visibility.
           </div>
         </div>
 
@@ -93,13 +93,13 @@ const UtubeTitle = () => {
           <Loadingui />
         </div>}
 
-        {data && <div id="output" className="text-orange-600 flex justify-center  items-center ">
+        {data && <div id="output" className=" flex justify-center  items-center " style={{ color: "rgb(255 250 226)" }}>
           <div className=" md:w-9/12 sm:w-11/12 w-full md:p-4 p-2 bg-zinc-900 rounded-xl">
             <pre className=" whitespace-pre-wrap break-words">{data}</pre>
           </div>
         </div>}
 
-        
+
       </div>
       <Footer isFooterVisible={true} />
     </>

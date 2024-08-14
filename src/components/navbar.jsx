@@ -7,76 +7,6 @@ const Navbar = (props) => {
 
     const navigate = useNavigate()
 
-    const setSizeOfServicesList = () => {
-    }
-
-    const setWidthOfServiceItem = () => {
-        const serviceItem = Array.from(document.querySelectorAll('.navbar .serviceItem'))
-        const servicesList = document.querySelector('.navbar .servicesList')
-        if (servicesList.clientWidth >= 750) {
-            const width = (servicesList.clientWidth * 0.2) - 20
-            serviceItem.forEach((item) => {
-                item.style.width = `${width}px`
-            })
-        }
-        else if (600 < servicesList.clientWidth && servicesList.clientWidth < 750) {
-            const width = (servicesList.clientWidth * 0.25) - 20
-            serviceItem.forEach((item) => {
-                item.style.width = `${width}px`
-            })
-        }
-        else if (350 < servicesList.clientWidth && servicesList.clientWidth < 600) {
-            const width = (servicesList.clientWidth * 0.3333) - 20
-            serviceItem.forEach((item) => {
-                item.style.width = `${width}px`
-            })
-        }
-    }
-
-    const hoveringServiceMenu = (target, pointer) => {
-        const allservices = document.querySelector('.navbar .allservices')
-        const menubar = document.querySelector('.navbar .menubar')
-        const homeMenu = menubar.querySelectorAll('div')[0]
-        const aboutMenu = menubar.querySelectorAll('div')[1]
-        target.contains(pointer) ? allservices.classList.remove('hidden') : ''
-
-        !target.contains(pointer)
-            && !allservices.querySelector('.servicesList').contains(pointer)
-            && !menubar.contains(pointer) ?
-            allservices.classList.add('hidden') : ''
-
-        allservices.querySelector('.servicesList').contains(pointer) ?
-            allservices.classList.remove('hidden') : ''
-
-        menubar.contains(pointer) && allservices.querySelector('.servicesList').contains(pointer) ?
-            allservices.classList.remove('hidden') : ''
-
-        homeMenu.contains(pointer) || aboutMenu.contains(pointer) ?
-            allservices.classList.add('hidden') : ''
-    }
-
-    window.addEventListener('resize', () => {
-        setSizeOfServicesList()
-        setWidthOfServiceItem()
-    })
-
-    useEffect(() => {
-        setSizeOfServicesList()
-        setWidthOfServiceItem()
-    }, [])
-
-    useEffect(() => {
-        document.addEventListener('click', (e) => {
-            const serviceMenu = document.querySelector('.navbar .menubar .services')
-            const allservices = document.querySelector('.navbar .allservices')
-            !allservices.querySelector('.servicesList').contains(e.target) && !serviceMenu.contains(e.target) ?
-                allservices.classList.add('hidden') : ''
-        })
-        document.addEventListener('mouseover', (e) => {
-            const serviceMenu = document.querySelector('.navbar .services')
-            hoveringServiceMenu(serviceMenu, e.target)
-        })
-    }, [])
 
 
     return (
@@ -101,50 +31,7 @@ const Navbar = (props) => {
                     </button>
                 </div>
 
-                <div className="allservices w-100 absolute top-full hidden ">
-                    <div className='servicesList position-relative start-0 d-flex flex-wrap align-items-center rounded-2 ' >
-
-                        <div className='serviceItem position-relative rounded-xl m-2 overflow-hidden'>
-                            <div className=' position-relative min-h-16 flex justify-center items-center bg-slate-100'> <p className='px-2 text-center m-0'>BLog content</p></div>
-                        </div>
-                        <div className='serviceItem position-relative rounded-xl m-2 overflow-hidden'>
-                            <div className=' position-relative min-h-16 flex justify-center items-center bg-slate-100'> <p className='px-2 text-center m-0'>Blog title</p></div>
-                        </div>
-                        <div className='serviceItem position-relative rounded-xl m-2 overflow-hidden'>
-                            <div className=' position-relative min-h-16 flex justify-center items-center bg-slate-100'> <p className='px-2 text-center m-0'>Blog summary</p></div>
-                        </div>
-                        <div className='serviceItem position-relative rounded-xl m-2 overflow-hidden'>
-                            <div className=' position-relative min-h-16 flex justify-center items-center bg-slate-100'> <p className='px-2 text-center m-0'>Video analysation</p></div>
-                        </div>
-                        <div className='serviceItem position-relative rounded-xl m-2 overflow-hidden'>
-                            <div className=' position-relative min-h-16 flex justify-center items-center bg-slate-100'> <p className='px-2 text-center m-0'>Image recognization</p></div>
-                        </div>
-                        <div className='serviceItem position-relative rounded-xl m-2 overflow-hidden'>
-                            <div className=' position-relative min-h-16 flex justify-center items-center bg-slate-100'> <p className='px-2 text-center m-0'>Audio transcription</p></div>
-                        </div>
-                        <div className='serviceItem position-relative rounded-xl m-2 overflow-hidden'>
-                            <div className=' position-relative min-h-16 flex justify-center items-center bg-slate-100'> <p className='px-2 text-center m-0'>Promotion</p></div>
-                        </div>
-
-                        <div className=" position-absolute w-100 h-auto text-white fs-5 fw-semibold d-flex justify-content-center mb-3" style={{ scale: "0.66", bottom: "-15px" }}>
-                            <button className="animated-button">
-                                <svg viewBox="0 0 24 24" className="arr-2" xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
-                                    ></path>
-                                </svg>
-                                <span className="text">Explore</span>
-                                <span className="circle"></span>
-                                <svg viewBox="0 0 24 24" className="arr-1" xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
-                                    ></path>
-                                </svg>
-                            </button>
-
-                        </div>
-                    </div>
-                </div>
+             
             </div>
 
 

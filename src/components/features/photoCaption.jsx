@@ -7,11 +7,11 @@ import Footer from "../footer.jsx";
 import axios from "axios";
 import Loadingui from "../Loadingui.jsx";
 
-const JobRole = () => {
+const PhotoCaption = () => {
 
   const value = useContext(ProjectContext)
 
-
+  
   const [prompt, setprompt] = useState("");
   const [data, setData] = useState(null);
   const [Loading, setLoading] = useState(false);
@@ -23,7 +23,7 @@ const JobRole = () => {
       const userId = localStorage.getItem("userId");
       console.log(userId);
       const response = await axios.post(
-        `${value.backendURL}/data/api/v1/kol/Blogtitle`,
+        `${value.backendURL}/data/api/v1/kol/piccaption`,
         {
           userId,
           prompt,
@@ -52,18 +52,20 @@ const JobRole = () => {
 
   return (
     <>
-      <Navbar />
-      <div className="bg-black" id="jobRole">
+        <Navbar />
+      <div className="bg-black" id="pcaption">
         <div className="introduction mt-28 ">
           <div
             className="title text-center text-3xl font-[800] uppercase py-3"
             style={textBackground}
           >
-            Job Description
+            Photo Caption
           </div>
           <div className="relatedText text-center text-lg px-8 py-3 text-amber-100">
-
-            Introducing our Job Description Extractor: Effortlessly extract concise job descriptions from any text. Simplify the process of identifying key roles and responsibilities for HR and recruitment needs.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate,
+            corporis! Dolores rem nam explicabo nesciunt consequuntur
+            architecto, nobis cupiditate mollitia. Commodi reiciendis ab,
+            numquam tenetur cupiditate vel optio omnis vitae.
           </div>
         </div>
 
@@ -94,17 +96,17 @@ const JobRole = () => {
           <Loadingui />
         </div>}
 
-        {data && <div id="output" className=" flex justify-center  items-center " style={{ color: "rgb(255 250 226)" }}>
+        {data && <div id="output" className=" flex justify-center  items-center " style={{color:"rgb(255 250 226)"}}>
           <div className=" md:w-9/12 sm:w-11/12 w-full md:p-4 p-2 bg-zinc-900 rounded-xl">
             <pre className=" whitespace-pre-wrap break-words">{data}</pre>
           </div>
         </div>}
 
-
+       
       </div>
       <Footer isFooterVisible={true} />
     </>
   );
 };
 
-export default JobRole;
+export default PhotoCaption;

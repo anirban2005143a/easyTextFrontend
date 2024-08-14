@@ -59,7 +59,7 @@ const UtubeDesc = () => {
             className="title text-center text-3xl font-[800] uppercase py-3"
             style={textBackground}
           >
-            Video Desc
+            Video Description
           </div>
           <div className="relatedText text-center text-lg px-8 py-3 text-amber-100">
           Easily craft compelling YouTube video descriptions with our tool. Input your video details, and generate engaging descriptions that capture viewers' interest and boost discoverability.
@@ -93,7 +93,7 @@ const UtubeDesc = () => {
           <Loadingui />
         </div>}
 
-        {data && <div id="output" className="text-orange-600 flex justify-center  items-center ">
+        {data && <div id="output" className=" flex justify-center  items-center " style={{color:"rgb(255 250 226)"}}>
           <div className=" md:w-9/12 sm:w-11/12 w-full md:p-4 p-2 bg-zinc-900 rounded-xl">
             <pre className=" whitespace-pre-wrap break-words">{data}</pre>
           </div>
