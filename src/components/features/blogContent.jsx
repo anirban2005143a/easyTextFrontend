@@ -1,23 +1,23 @@
 import React, { useContext, useState } from "react";
 import ProjectContext from "../../context/projectContext";
 import Navbar from "../navbar.jsx";
-// import '../../css/features/blogTitle.css'
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import demoImg1 from "/download (1).jpeg";
 import Footer from "../footer.jsx";
 import axios from "axios";
 import Loadingui from "../Loadingui.jsx";
 
 const blogContent = () => {
-
-  const value = useContext(ProjectContext)
-
-  
+  const value = useContext(ProjectContext);
   const [prompt, setprompt] = useState("");
   const [data, setData] = useState(null);
   const [Loading, setLoading] = useState(false);
   // after retriving the id from local then set that id into useris
 
   const fetch_data = async () => {
+    console.log("Aaa")
+    toast.success("Generation is in progress")
     setLoading(true);
     try {
       const userId = localStorage.getItem("userId");
@@ -33,6 +33,7 @@ const blogContent = () => {
       setLoading(false);
       console.log(response);
     } catch (error) {
+      toast.error(error.response.data.message)
       setLoading(false);
       console.log(error.response.data.message);
       setData(error.response.data.message);
@@ -52,7 +53,7 @@ const blogContent = () => {
 
   return (
     <>
-       <Navbar />
+      <Navbar />
       <div className="bg-black" id="blogContent">
         <div className="introduction mt-28 ">
           <div
@@ -62,7 +63,9 @@ const blogContent = () => {
             blog content
           </div>
           <div className="relatedText text-center text-lg px-8 py-3 text-amber-100">
-          Transform your text into polished blog posts with ease using our intuitive tool. Simply input your content and let our feature format and enhance it for a professional finish.
+            Transform your text into polished blog posts with ease using our
+            intuitive tool. Simply input your content and let our feature format
+            and enhance it for a professional finish.
           </div>
         </div>
 
@@ -89,15 +92,23 @@ const blogContent = () => {
           </div>
         </div>
 
-        {Loading && <div className="loadng">
-          <Loadingui />
-        </div>}
-
-        {data && <div id="output" className=" flex justify-center  items-center " style={{color:"rgb(255 250 226)"}}>
-          <div className=" md:w-9/12 sm:w-11/12 w-full md:p-4 p-2 bg-zinc-900 rounded-xl">
-            <pre className=" whitespace-pre-wrap break-words">{data}</pre>
+        {Loading && (
+          <div className="loadng">
+            <Loadingui />
           </div>
-        </div>}
+        )}
+
+        {data && (
+          <div
+            id="output"
+            className=" flex justify-center  items-center "
+            style={{ color: "rgb(255 250 226)" }}
+          >
+            <div className=" md:w-9/12 sm:w-11/12 w-full md:p-4 p-2 bg-zinc-900 rounded-xl">
+              <pre className=" whitespace-pre-wrap break-words">{data}</pre>
+            </div>
+          </div>
+        )}
 
         <div className="otherBlogFeatures mt-16">
           <div
@@ -113,7 +124,13 @@ const blogContent = () => {
                   Blog Title
                 </div>
                 <div className="relatedContent text-base font-[400] text-neutral-500">
-                Crafting the perfect blog title is crucial for capturing your audience's attention. Our tool helps you effortlessly create engaging and relevant titles based on your content. Simply enter your text, and we’ll provide a range of title suggestions designed to attract readers and enhance your blog's appeal. Save time and boost your content's visibility with titles that stand out.
+                  Crafting the perfect blog title is crucial for capturing your
+                  audience's attention. Our tool helps you effortlessly create
+                  engaging and relevant titles based on your content. Simply
+                  enter your text, and we’ll provide a range of title
+                  suggestions designed to attract readers and enhance your
+                  blog's appeal. Save time and boost your content's visibility
+                  with titles that stand out.
                 </div>
               </div>
               <div className="image sm:w-5/12 w-10/12 p-4">
@@ -125,11 +142,17 @@ const blogContent = () => {
                 <img className=" rounded-md w-full" src={demoImg1} />
               </div>
               <div className="content sm:w-7/12 w-full p-4">
-              <div className="heading text-2xl font-[700] text-orange-50 my-4">
+                <div className="heading text-2xl font-[700] text-orange-50 my-4">
                   Blog summary
                 </div>
                 <div className="relatedContent text-base font-[400] text-neutral-500">
-                Summarizing your blog posts has never been easier. Our tool takes your full-length content and generates a clear, engaging summary that captures the essence of your blog. Ideal for providing readers with quick insights or enhancing your content’s SEO, this feature ensures that every post has a compelling summary that drives engagement and encourages readers to dive deeper into your content.
+                  Summarizing your blog posts has never been easier. Our tool
+                  takes your full-length content and generates a clear, engaging
+                  summary that captures the essence of your blog. Ideal for
+                  providing readers with quick insights or enhancing your
+                  content’s SEO, this feature ensures that every post has a
+                  compelling summary that drives engagement and encourages
+                  readers to dive deeper into your content.
                 </div>
               </div>
             </div>
@@ -137,6 +160,7 @@ const blogContent = () => {
         </div>
       </div>
       <Footer isFooterVisible={true} />
+      <ToastContainer/>
     </>
   );
 };

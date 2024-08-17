@@ -2,6 +2,8 @@ import React, { useContext, useState } from "react";
 import ProjectContext from "../../context/projectContext";
 import Navbar from "../navbar";
 // import '../../css/features/blogTitle.css'
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import demoImg1 from "/download (1).jpeg";
 import Footer from "../footer";
 import axios from "axios";
@@ -21,7 +23,7 @@ const blogTitle = () => {
     currentTarget.disabled = true
     setLoading(true);
     try {
-      console.log("aaagyuae")
+      toast.success('Generation is in progress')
       const userId = localStorage.getItem("userId");
       const response = await axios.post(`${value.backendURL}/data/api/v1/kol/Blogtitle`,
         {
@@ -35,6 +37,7 @@ const blogTitle = () => {
       setLoading(false);
       console.log(response);
     } catch (error) {
+      toast.error(error.response.data.message)
       console.log(error);
       setLoading(false);
       console.log(error.response.data.message);
@@ -140,6 +143,7 @@ const blogTitle = () => {
         </div>
       </div>
       <Footer isFooterVisible={true} />
+      <ToastContainer/>
     </>
   );
 };

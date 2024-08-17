@@ -1,6 +1,8 @@
 import React, { useContext, useState } from "react";
 import Navbar from "../navbar";
 // import '../../css/features/blogTitle.css'
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import demoImg1 from "/download (1).jpeg";
 import Footer from "../footer";
 import axios from "axios";
@@ -17,6 +19,7 @@ const Paragraph = () => {
   // after retriving the id from local then set that id into useris
 
   const fetch_data = async () => {
+    toast.success('Generation is in progress')
     setLoading(true);
     try {
       const userId = localStorage.getItem("userId");
@@ -32,6 +35,7 @@ const Paragraph = () => {
       setLoading(false);
       console.log(response);
     } catch (error) {
+      toast.error(error.response.data.message)
       setLoading(false);
       console.log(error);
       // setData(error.response.data.message);
@@ -101,6 +105,7 @@ const Paragraph = () => {
       
       </div>
       <Footer isFooterVisible={true} />
+      <ToastContainer/>
     </>
   );
 };
