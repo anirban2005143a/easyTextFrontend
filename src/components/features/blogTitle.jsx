@@ -10,8 +10,7 @@ import axios from "axios";
 import Loadingui from "../Loadingui.jsx";
 
 const blogTitle = () => {
-
-  const value = useContext(ProjectContext)
+  const value = useContext(ProjectContext);
 
   const [prompt, setprompt] = useState("");
   const [data, setData] = useState(null);
@@ -19,25 +18,42 @@ const blogTitle = () => {
   // after retriving the id from local then set that id into useris
 
   const fetch_data = async (e) => {
-    const currentTarget = e.currentTarget
-    currentTarget.disabled = true
+    const currentTarget = e.currentTarget;
+    currentTarget.disabled = true;
     setLoading(true);
     try {
-      toast.success('Generation is in progress')
+      toast.success("Generation is in progress");
+      console.log("lop");
       const userId = localStorage.getItem("userId");
-      const response = await axios.post(`${value.backendURL}/data/api/v1/kol/Blogtitle`,
+      // const response = await axios.post(`${value.backendURL}/data/api/v1/kol/Blogtitle`,
+      //   {
+      //     userId,
+      //     prompt,
+      //   }
+      // );
+      // I am not using this type of syntax so youi make sure that this api is working on your api i am writing my code here ok swimmer boy
+      console.log("lop");
+      const response = await axios.post(
+        `http://localhost:1250/data/api/v1/kol/Blogtitle`,
         {
           userId,
           prompt,
         }
       );
+      // console.log("lop");
       console.log(response);
-      currentTarget.disabled = true
+      // console.log("lop");
+      currentTarget.disabled = true;
       setData(response.data.data);
+      // console.log("lop");
       setLoading(false);
+      // console.log("lop");
       console.log(response);
+      // console.log("lop");
     } catch (error) {
-      toast.error(error.response.data.message)
+      toast.error(
+        "Hacing some issue in Gemini API server or the model is overloaded , try again later"
+      );
       console.log(error);
       setLoading(false);
       console.log(error.response.data.message);
@@ -55,7 +71,7 @@ const blogTitle = () => {
     color: "transparent",
     animation: "textBackground 30s linear 0s infinite",
   };
-  console.log(Loading)
+  // console.log(Loading);
   return (
     <>
       <Navbar />
@@ -68,7 +84,9 @@ const blogTitle = () => {
             blog title
           </div>
           <div className="relatedText text-center text-lg px-8 py-3 text-amber-100">
-          Generate engaging blog titles effortlessly with our tool. Input your content, and we’ll suggest compelling titles that capture your audience's attention.
+            Generate engaging blog titles effortlessly with our tool. Input your
+            content, and we’ll suggest compelling titles that capture your
+            audience's attention.
           </div>
         </div>
 
@@ -95,15 +113,23 @@ const blogTitle = () => {
           </div>
         </div>
 
-        {Loading && <div className="loadng">
-          <Loadingui />
-        </div>}
-
-        {data && <div id="output" className=" flex justify-center  items-center " style={{color:"rgb(255 250 226)"}}>
-          <div className=" md:w-9/12 sm:w-11/12 w-full md:p-4 p-2 bg-zinc-900 rounded-xl">
-            <pre className=" whitespace-pre-wrap break-words">{data}</pre>
+        {Loading && (
+          <div className="loadng">
+            <Loadingui />
           </div>
-        </div>}
+        )}
+
+        {data && (
+          <div
+            id="output"
+            className=" flex justify-center  items-center "
+            style={{ color: "rgb(255 250 226)" }}
+          >
+            <div className=" md:w-9/12 sm:w-11/12 w-full md:p-4 p-2 bg-zinc-900 rounded-xl">
+              <pre className=" whitespace-pre-wrap break-words">{data}</pre>
+            </div>
+          </div>
+        )}
 
         <div className="otherBlogFeatures mt-16">
           <div
@@ -119,7 +145,14 @@ const blogTitle = () => {
                   Blog Content
                 </div>
                 <div className="relatedContent text-base font-[400] text-neutral-500">
-                Our intuitive text-to-blog feature lets you effortlessly convert your raw text into polished, engaging blog content. Whether you’re jotting down thoughts or drafting outlines, simply input your text, and our tool will help you refine it into a structured and captivating blog post. Enjoy easy formatting options, seamless integration with your existing content, and a user-friendly interface designed to enhance your blogging experience.
+                  Our intuitive text-to-blog feature lets you effortlessly
+                  convert your raw text into polished, engaging blog content.
+                  Whether you’re jotting down thoughts or drafting outlines,
+                  simply input your text, and our tool will help you refine it
+                  into a structured and captivating blog post. Enjoy easy
+                  formatting options, seamless integration with your existing
+                  content, and a user-friendly interface designed to enhance
+                  your blogging experience.
                 </div>
               </div>
               <div className="image sm:w-5/12 w-10/12 p-4">
@@ -135,7 +168,13 @@ const blogTitle = () => {
                   Blog summary
                 </div>
                 <div className="relatedContent text-base font-[400] text-neutral-500">
-                Summarizing your blog posts has never been easier. Our tool takes your full-length content and generates a clear, engaging summary that captures the essence of your blog. Ideal for providing readers with quick insights or enhancing your content’s SEO, this feature ensures that every post has a compelling summary that drives engagement and encourages readers to dive deeper into your content.
+                  Summarizing your blog posts has never been easier. Our tool
+                  takes your full-length content and generates a clear, engaging
+                  summary that captures the essence of your blog. Ideal for
+                  providing readers with quick insights or enhancing your
+                  content’s SEO, this feature ensures that every post has a
+                  compelling summary that drives engagement and encourages
+                  readers to dive deeper into your content.
                 </div>
               </div>
             </div>
@@ -143,7 +182,7 @@ const blogTitle = () => {
         </div>
       </div>
       <Footer isFooterVisible={true} />
-      <ToastContainer/>
+      <ToastContainer />
     </>
   );
 };
