@@ -35,7 +35,7 @@ const Part1 = (props) => {
         <div className="contentBox position-relative rounded-4 overflow-hidden" style={{ height: "60%", padding: '1px' }}>
           <div className="homecontents rounded-4">
             <div className="title">Text Generator</div>
-            <div className="headline mx-3 my-3 font-serif " style={{letterSpacing:"1px"}}>
+            <div className="headline mx-3 my-3  montserrat-font" style={{letterSpacing:"1px"}}>
             Welcome to our AI-powered content generation platform! Whether you're starting with text or an image, our advanced AI models help you create compelling, high-quality content in just a few clicks. Perfect for blogs, social media, and beyond—let AI turn your ideas into powerful words effortlessly!
             </div>
             <div className="gettingStart d-flex justify-content-center">

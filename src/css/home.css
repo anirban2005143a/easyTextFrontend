@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
 * {
     margin: 0;
     padding: 0;
@@ -49,9 +52,9 @@
 
 .homePart1 .mainContent .contentBox .homecontents .headline {
     font-size: 1.1rem;
-    font-weight: 400;
     text-align: center;
     color: rgb(249, 242, 229);
+    
 }
 
 .homePart1 .mainContent .contentBox .homecontents button {
@@ -124,10 +127,6 @@
     transition: all;
     transition-duration: 1s;
     transition-timing-function: ease-in-out;
-}
-
-.homepart2.visibility {
-    opacity: 1;
 }
 
 .homepart2 .serviceSection {
@@ -205,22 +204,6 @@
     padding: 0.7rem 1.5rem;
 }
 
-.homePart3 .content.visibility,
-.homePart4 .content.visibility {
-    animation: animateHomeBlock 500ms ease-in;
-}
-
-@keyframes animateHomeBlock {
-    0% {
-        opacity: 0;
-        transform: translateY(50%);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
 
 .homePart3 .content .textContent,
 .homePart4 .content .textContent {

@@ -19,17 +19,17 @@ const Navbar = (props) => {
                 <div className="menubar ms-md-3 ms-sm-2 mt-1 pb-1 position-relative d-flex justify-content-between align-items-center" >
                     <Link to='/'> <div className=' py-2 mx-md-3 mx-sm-2 mx-1 px-md-2 px-1 '>Home</div></Link>
                     <Link to='/about'> <div className=' py-2 mx-md-3 mx-sm-2 mx-1 px-md-2 px-1 '>About</div></Link>
-                    <div className=' py-2 mx-md-3 mx-sm-2 mx-1 px-md-2 px-1 services' clicked="false">Services</div>
+                    {/* <div className=' py-2 mx-md-3 mx-sm-2 mx-1 px-md-2 px-1 services' clicked="false">Services</div> */}
                 </div>
 
-                <div className="authentication">
+                {/* <div className="authentication">
                     <button className=' signup' onClick={() => { navigate("/signup") }}>
                         Sign-up
                     </button>
                     <button className=' login' onClick={() => { navigate("/login") }}>
                         Log-in
                     </button>
-                </div>
+                </div> */}
 
              
             </div>

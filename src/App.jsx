@@ -3,7 +3,6 @@ import './css/home.css'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ProjectContext from './context/projectContext';
 import Home from './components/support/home'
-import Explore from './components/explore';
 import About from './components/support/about';
 import Contact from './components/support/contact';
 import RequestFeature from './components/support/requestFeature';
@@ -21,7 +20,6 @@ import UtubeDesc from './components/features/utubeDesc';
 import UtubeTitle from './components/features/utubeTitle';
 import JobRole from './components/features/jobRole';
 import TextFormate from './components/features/textFormate';
-import PhotoCaption from './components/features/photoCaption';
 
 function App() {
 
@@ -53,9 +51,6 @@ function App() {
       element: <RequestFeature />
     },
     {
-      path: '/explore',
-      element: <Explore />
-    }, {
       path: '/login',
       element: <Login />
     },
@@ -102,12 +97,7 @@ function App() {
     {
       path: '/features/text/formate',
       element: <TextFormate />
-    },
-    {
-      path: '/features/pcaption',
-      element: <PhotoCaption />
-    },
-   
+    }
   
   ])
 

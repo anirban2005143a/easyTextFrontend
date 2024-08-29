@@ -1,29 +1,31 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState , useRef } from "react";
 import ProjectContext from "../../context/projectContext";
 import Navbar from "../navbar";
-// import '../../css/features/blogTitle.css'
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import demoImg1 from "/download (1).jpeg";
+import Part2 from "../home/part2";
 import Footer from "../footer";
 import axios from "axios";
 import Loadingui from "../Loadingui.jsx";
 
 const blogSummary = () => {
 
-  const value = useContext(ProjectContext)
+  const value = useContext(ProjectContext);
+  const part2Ref = useRef()
 
   const [prompt, setprompt] = useState("");
   const [data, setData] = useState(null);
   const [Loading, setLoading] = useState(false);
   // after retriving the id from local then set that id into useris
 
-  const fetch_data = async () => {
-    toast.success('Generation is in progress')
+  const fetch_data = async (e) => {
+    const currentTarget = e.currentTarget;
+    currentTarget.disabled = true;
     setLoading(true);
+    toast.success("Generation is in progress");
     try {
-      const userId = localStorage.getItem("userId");
-      console.log(userId);
+      const userId = import.meta.env.VITE_REACT_USERID;
       const response = await axios.post(
         `${value.backendURL}/data/api/v1/kol/Blogsummary`,
         {
@@ -31,14 +33,19 @@ const blogSummary = () => {
           prompt,
         }
       );
+      console.log(response);
+      currentTarget.disabled = false;
       setData(response.data.data);
       setLoading(false);
-      console.log(response);
     } catch (error) {
+      currentTarget.disabled = false;
+      toast.error(
+        "Hacing some issue in Gemini API server or the model is overloaded , try again later"
+      );
+      console.log(error);
       setLoading(false);
-      toast.error(error.response.data.message);
       console.log(error.response.data.message);
-      setData(error.response.data.message);
+      setData(error.response.statusText);
     }
   };
 
@@ -139,6 +146,7 @@ const blogSummary = () => {
           </div>
         </div>
       </div>
+      <Part2 part2Ref={part2Ref} isPart2Visible={true} />
       <Footer isFooterVisible={true} />
       <ToastContainer/>
     </>

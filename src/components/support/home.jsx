@@ -20,42 +20,6 @@ const Home = () => {
     const [isPart4Visible, setisPart4Visible] = useState(false)
     const [isFooterVisible, setisFooterVisible] = useState(false)
 
-    // useEffect(() => {
-    //     const options = {
-    //         root: null,  
-    //         rootMargin: '0px',
-    //         threshold: 0.1
-    //     };
-
-    //     const observer = new IntersectionObserver((entries) => {
-    //         entries.forEach(entry => {
-    //             if (entry.isIntersecting) {
-    //                 if(part2Ref.current.contains(entry.target)){
-    //                     setisPart2Visible(true)
-    //                 }
-    //                 else if(part3Ref.current.contains(entry.target)){
-    //                     setisPart3Visible(true)
-    //                 }
-    //                 else if(footerRef.current.contains(entry.target)){
-    //                     setisFooterVisible(true)
-    //                 }
-    //             }
-    //         });
-    //     }, options);
-
-    //     if (part1Ref.current) observer.observe(part1Ref.current);
-    //     if (part2Ref.current) observer.observe(part2Ref.current);
-    //     if (part3Ref.current) observer.observe(part3Ref.current);
-    //     if (footerRef.current) observer.observe(footerRef.current);
-
-    //     return () => {
-    //         if (part1Ref.current) observer.unobserve(part1Ref.current);
-    //         if (part2Ref.current) observer.unobserve(part2Ref.current);
-    //         if (part3Ref.current) observer.unobserve(part3Ref.current);
-    //         if (footerRef.current) observer.unobserve(footerRef.current);
-    //     };
-    // }, []);
-
     const scrollWithAnimation = (scrollHeight) => {
         const part1Height = part1Ref.current.clientHeight
         const part2Height = part2Ref.current.clientHeight

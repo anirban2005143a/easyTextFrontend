@@ -22,16 +22,6 @@ const Part2 = (props) => {
 
   }
 
-  // const findMaxItemHeight = ()=>{
-  //   const serviceItemArr = Array.from(document.querySelectorAll('.homepart2 .serviceSection .allservices .serviceList .serciceItem'))
-  //   let height = 0
-  //   serviceItemArr.forEach((item, index, arr) => {
-  //     setserviceItemHeight(Math.max(height, item.clientHeight))
-  //     height = item.clientHeight
-  //     index === arr.length - 1 ? setisProgress(false) : setisProgress(true)
-  //   })
-  // }
-
   const makeRandomAnimation = () => {
     const serciceItemArr = Array.from(document.querySelectorAll('.homepart2 .serciceItem'))
     serciceItemArr.forEach((item, index) => {
@@ -43,23 +33,6 @@ const Part2 = (props) => {
     })
   }
 
-  // const makeAllServiceItem = (height) => {
-  //   const serviceItemArr = Array.from(document.querySelectorAll('.homepart2 .serviceSection .allservices .serviceList .serciceItem'))
-  //   serviceItemArr.forEach((item) => {
-  //     item.style.height = `${height}px`
-  //   })
-  //   makeRelatedContentCover(height)
-  // }
-
-  // const makeRelatedContentCover = (itemHeight) => {
-  //   const serviceItemArr = Array.from(document.querySelectorAll('.homepart2 .serviceSection .allservices .serviceList .serciceItem'))
-  //   serviceItemArr.forEach((item) => {
-  //     const itemNameHeight = item.querySelector('.serviceName').clientHeight
-  //     item.querySelector('.relatedContent').style.height = `${itemHeight - itemNameHeight -1}px`
-  //   })
-
-  // }
-
   window.addEventListener('resize', () => {
     resizeServiceItem()
   })
@@ -70,14 +43,8 @@ const Part2 = (props) => {
   }, [])
 
 
-  // useEffect(() => {
-  //   !isProgress && serviceItemHeight !== 0 ? makeAllServiceItem(serviceItemHeight) : ""
-  // }, [isProgress, serviceItemHeight])
-
-
-
   return (
-    <div ref={props.part2Ref} className={`homepart2 w-100 bg-black ${props.isPart2Visible ? 'visibility' : ''}`} >
+    <div ref={props.part2Ref} className={`homepart2 w-100  transition-all duration-500 ease-in bg-black ${props.isPart2Visible ? 'opacity-100 translate-y-0' : ' opacity-0 translate-y-28'}`} >
       <div className="serviceSection w-100 h-auto">
         <div className="title d-flex justify-content-center">
           <div id="title" className=' h1 fw-bold'>Explore More</div>
@@ -106,7 +73,7 @@ const Part2 = (props) => {
               <div className='relatedContent rounded-bottom-3 bg-black position-relative z-1 fw-light text-center px-2 pb-4 pt-1' style={{ fontSize: "15px" }}>Give a summary to convert into paragraph</div>
             </div>
             <div className="serciceItem mx-2 my-2 position-relative rounded-3 overflow-hidden text-center text-white" onClick={() => { navigate('/features/social/post') }}>
-              <div className='serviceName rounded-top-3 position-relative z-1 bg-black px-md-3 px-2 pt-md-3 pt-sm-2 pt-3 fs-4 fw-bold' > Social Media Post</div>
+              <div className='serviceName rounded-top-3 position-relative z-1 bg-black px-md-3 px-2 pt-md-3 pt-sm-2 pt-3 fs-4 fw-bold' >LinkedIn Post</div>
               <div className='relatedContent rounded-bottom-3 bg-black position-relative z-1 fw-light text-center px-2 pb-4 pt-1' style={{ fontSize: "15px" }}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta quos dolorum rerum maiores qui </div>
             </div>
             <div className="serciceItem mx-2 my-2 position-relative rounded-3 overflow-hidden text-center text-white" onClick={() => { navigate('/features/promotion') }} >
@@ -131,18 +98,7 @@ const Part2 = (props) => {
               <div className='relatedContent rounded-bottom-3 bg-black position-relative z-1 fw-light text-center px-2 pb-4 pt-1' style={{ fontSize: "15px" }}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta quos dolorum rerum maiores qui </div>
             </div>
 
-            <div className="serciceItem mx-2 my-2 position-relative rounded-3 overflow-hidden text-center text-white" onClick={() => { navigate('/features/pcaption') }}>
-              <div className='serviceName rounded-top-3 position-relative z-1 bg-black px-md-3 px-2 pt-md-3 pt-sm-2 pt-3 fs-4 fw-bold' > Photo Caption</div>
-              <div className='relatedContent rounded-bottom-3 bg-black position-relative z-1 fw-light text-center px-2 pb-4 pt-1' style={{ fontSize: "15px" }}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta quos dolorum rerum maiores qui </div>
-            </div>
-            <div className="serciceItem mx-2 my-2 position-relative rounded-3 overflow-hidden text-center text-white">
-              <div className='serviceName rounded-top-3 position-relative z-1 bg-black px-md-3 px-2 pt-md-3 pt-sm-2 pt-3 fs-4 fw-bold' > Image to Sumarize Content</div>
-              <div className='relatedContent rounded-bottom-3 bg-black position-relative z-1 fw-light text-center px-2 pb-4 pt-1' style={{ fontSize: "15px" }}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta quos dolorum rerum maiores qui </div>
-            </div>
-            <div className="serciceItem mx-2 my-2 position-relative rounded-3 overflow-hidden text-center text-white">
-              <div className='serviceName rounded-top-3 position-relative z-1 bg-black px-md-3 px-2 pt-md-3 pt-sm-2 pt-3 fs-4 fw-bold' > Image to Question-Answer</div>
-              <div className='relatedContent rounded-bottom-3 bg-black position-relative z-1 fw-light text-center px-2 pb-4 pt-1' style={{ fontSize: "15px" }}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta quos dolorum rerum maiores qui </div>
-            </div>
+           
           </div>
         </div>
       </div>
