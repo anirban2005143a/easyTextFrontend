@@ -10,8 +10,8 @@
 
 #contact .heading,
 #RequestNewFeature .heading {
-    font-size: 50px;
-    font-weight: 700;
+    /* font-size: 50px; */
+    /* font-weight: 700; */
     letter-spacing: 1px;
     background-image: linear-gradient(45deg, aqua, #952bff, #ff669e, #952bff, aqua);
     background-size: 400%;
@@ -109,6 +109,7 @@
     animation: boxshadowAnimate 25s linear 0s infinite;
 }
 
+#contact .relatedContent,
 #RequestNewFeature .relatedContent {
     width: 80%;
     text-align: center;

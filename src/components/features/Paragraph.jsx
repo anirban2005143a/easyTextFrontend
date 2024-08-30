@@ -55,8 +55,8 @@ const Paragraph = () => {
     backgroundImage:
       "linear-gradient(45deg,aqua ,#952bff, #ff669e , #952bff , aqua)",
     backgroundSize: "400%",
-    webkitBackgroundClip: "text",
-    webkitTextFillColor: "transparent",
+    WebkitBackgroundClip: "text",
+    WebkitTextFillColor: "transparent",
     backgroundClip: "text",
     color: "transparent",
     animation: "textBackground 30s linear 0s infinite",

@@ -30,16 +30,16 @@ const backgroundDesign = () => {
   })
 
   return (
-    <div className="backgroundDesign w-100 h-100 position-absolute overflow-y-visible">
+    <div className="backgroundDesign w-100 h-full position-absolute overflow-y-visible">
       <div className="box1 overflow-hidden position-relative rounded-3" >
         <div className="innerDiv w-100 h-100 bg-black rounded-3"></div>
         <div className="rotatingDiv position-absolute bg-body-secondary " style={{ zIndex: -1 }}></div>
       </div>
 
-      <div className="box2 overflow-hidden position-absolute rounded-3" >
+      {/* <div className="box2 overflow-hidden position-absolute rounded-3" >
         <div className="innerDiv w-100 h-100 bg-black rounded-3"></div>
         <div className="rotatingDiv position-absolute bg-body-secondary" style={{ zIndex: -1 }}></div>
-      </div>
+      </div> */}
 
       <div className="box3 overflow-hidden position-absolute rounded-3" >
         <div className="innerDiv w-100 h-100 bg-black rounded-3"></div>

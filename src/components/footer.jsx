@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link , useNavigate } from 'react-router-dom'
 import '../css/footer.css'
 
 
 const Footer = (props) => {
+
+  const navigate = useNavigate()
 
   const resize = () => {
     const footer = document.querySelector('.footer')
@@ -38,32 +40,30 @@ const Footer = (props) => {
 
         <div className="services footerChild px-2 py-1 mt-3">
           <div className="ourServies" id="title"> All Services</div>
-          <div className="ourServies"><div> Blog </div></div>
-          <div className="ourServies"><div> Advertisment</div></div>
-          <div className="ourServies"><div> Email Writing</div></div>
-          <div className="ourServies"><div> Youtube Video Content</div></div>
-          <div className="ourServies"><div> Text Edit</div></div>
-          <div className="ourServies"><div> Summarize and Extend</div></div>
-          <div className="ourServies"><div> Analyze Images</div></div>
-          <div className="ourServies"><div> Analyze Audio</div></div>
-          <div className="ourServies"><div> Get and Execute Python</div></div>
-          <div className="ourServies"><div> Get json Object</div></div>
+          <div className="ourServies cursor-pointer"><div onClick={()=>{navigate("/features/blog/title")}}> Blog Title </div></div>
+          <div className="ourServies cursor-pointer"><div onClick={()=>{navigate("/features/blog/content")}}> Blog Content</div></div>
+          <div className="ourServies cursor-pointer"><div onClick={()=>{navigate("/features/blog/summary")}}> Blog summary</div></div>
+          <div className="ourServies cursor-pointer"><div onClick={()=>{navigate("/features/social/post")}}> Social Post</div></div>
+          <div className="ourServies cursor-pointer"><div onClick={()=>{navigate("/features/promotion")}}> Promotional Advertisement</div></div>
+          <div className="ourServies cursor-pointer"><div onClick={()=>{navigate("/features/youtube/desc")}}> Video Description</div></div>
+          <div className="ourServies cursor-pointer"><div onClick={()=>{navigate("/features/youtube/title")}}> Video Title</div></div>
+          <div className="ourServies cursor-pointer"><div onClick={()=>{navigate("/features/text/formate")}}> Text Formate</div></div>
+          <div className="ourServies cursor-pointer"><div onClick={()=>{navigate("/features/jobrole")}}> Job Decsription</div></div>
         </div>
 
         <div className="keyFeatures footerChild px-2 py-1 mt-3">
           <div className="keys" id="title"> Features</div>
-          <div className="keys"><div> Image Analyzation</div></div>
-          <div className="keys"><div> Audio Analyzation</div></div>
-          <div className="keys"><div> Code Execution</div></div>
-          <div className="keys"><div> Json Object</div></div>
+          <div className="keys"><div> AI-Powered Content Generation</div></div>
+          <div className="keys"><div> Completely Free and Accessible</div></div>
+          <div className="keys"><div> Streamlined User Experience</div></div>
         </div>
 
         <div className="support footerChild px-2 py-1 mt-3">
           <div className="supportItem" id="title"> Support</div>
-          <div className="supportItem"> <Link className=' text-decoration-none' to="/"> <div> Home</div></Link></div>
-          <div className="supportItem"> <Link className=' text-decoration-none' to="/about"> <div> About</div></Link></div>
-          <div className="supportItem"> <Link className=' text-decoration-none' to="/contact"> <div> Contact</div></Link></div>
-          <div className="supportItem"> <Link className=' text-decoration-none' to="/requestFeature"> <div> Request a new feature</div></Link></div>
+          <div className="supportItem cursor-pointer"> <Link className=' text-decoration-none' to="/"> <div> Home</div></Link></div>
+          <div className="supportItem cursor-pointer"> <Link className=' text-decoration-none' to="/about"> <div> About</div></Link></div>
+          <div className="supportItem cursor-pointer"> <Link className=' text-decoration-none' to="/contact"> <div> Contact</div></Link></div>
+          <div className="supportItem cursor-pointer"> <Link className=' text-decoration-none' to="/requestFeature"> <div> Request a new feature</div></Link></div>
         </div>
 
       </div>

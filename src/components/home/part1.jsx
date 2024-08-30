@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import BackgroundDesign from '../backgroundDesign'
 import { Link } from 'react-router-dom'
 import '../../css/home.css'
+import Navbar from '../navbar'
 
 const Part1 = (props) => {
 
@@ -10,8 +11,8 @@ const Part1 = (props) => {
     if (homePart1) {
       window.innerWidth >= 950 ? homePart1.querySelector('.contentBox').style.width = '50%' : ''
       800 <= window.innerWidth && window.innerWidth < 950 ? homePart1.querySelector('.contentBox').style.width = '65%' : ''
-      600 <= window.innerWidth && window.innerWidth < 800 ? homePart1.querySelector('.contentBox').style.width = '75%' : ''
-      window.innerWidth < 600 ? homePart1.querySelector('.contentBox').style.width = '85%' : ''
+      600 <= window.innerWidth && window.innerWidth < 800 ? homePart1.querySelector('.contentBox').style.width = '80%' : ''
+      window.innerWidth < 600 ? homePart1.querySelector('.contentBox').style.width = '95%' : ''
     }
 
   }
@@ -27,30 +28,30 @@ const Part1 = (props) => {
 
 
   return (
-    <div ref={props.part1Ref} className='homePart1 w-100 d-flex align-items-center justify-content-center overflow-y-visible' >
+    <div ref={props.part1Ref} className='homePart1  w-100 align-items-center justify-content-center overflow-y-visible' >
+      <Navbar/>
+      {window.innerWidth >500 &&<BackgroundDesign />}
 
-      <BackgroundDesign />
-
-      <div className="mainContent d-flex justify-content-center align-items-center" >
-        <div className="contentBox position-relative rounded-4 overflow-hidden" style={{ height: "60%", padding: '1px' }}>
-          <div className="homecontents rounded-4">
+      <div className="mainContent d-flex pt-24"  >
+        <div className="contentBox position-relative rounded-4 overflow-hidden mx-auto" style={{ height: "60%", padding: '1px' }}>
+          <div className="homecontents rounded-4 p-4">
             <div className="title">Text Generator</div>
-            <div className="headline mx-3 my-3  montserrat-font" style={{letterSpacing:"1px"}}>
+            <div className="headline  my-3 font-thin" style={{letterSpacing:"0px"}}>
             Welcome to our AI-powered content generation platform! Whether you're starting with text or an image, our advanced AI models help you create compelling, high-quality content in just a few clicks. Perfect for blogs, social media, and beyond—let AI turn your ideas into powerful words effortlessly!
             </div>
             <div className="gettingStart d-flex justify-content-center">
-              <Link to="/explore" >
+              <a href="#explore" >
                 <button className=' px-3 py-1 rounded-3 my-3'>
                   <span className=' w-100 h-100 position-relative z-1'>Explore</span>
                 </button>
-              </Link>
+              </a>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="endingWave position-absolute w-100 ">
-        <div className="svg h-100">
+      {/* <div className="endingWave relative top-full z-20 " style={{width:"200%"}}>
+        <div className="svg ">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
             <defs>
               <linearGradient id="dualGradient" x1="0%" y1="0%" x2="100%" y2="0%" >
@@ -73,7 +74,7 @@ const Part1 = (props) => {
           </svg>
 
         </div>
-      </div>
+      </div> */}
     </div>
   )
 }

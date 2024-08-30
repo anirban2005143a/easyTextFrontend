@@ -52,8 +52,8 @@ const blogContent = () => {
     backgroundImage:
       "linear-gradient(45deg,aqua ,#952bff, #ff669e , #952bff , aqua)",
     backgroundSize: "400%",
-    webkitBackgroundClip: "text",
-    webkitTextFillColor: "transparent",
+    WebkitBackgroundClip: "text",
+    WebkitTextFillColor: "transparent",
     backgroundClip: "text",
     color: "transparent",
     animation: "textBackground 30s linear 0s infinite",
@@ -118,54 +118,7 @@ const blogContent = () => {
           </div>
         )}
 
-        <div className="otherBlogFeatures mt-16">
-          <div
-            className="title text-center text-2xl font-[600]"
-            style={textBackground}
-          >
-            Check out other blog features
-          </div>
-          <div className="otherBlogsFeature">
-            <div className="feature1 flex sm:flex-row flex-col-reverse justify-center items-center md:p-6 sm:p-4 p-2">
-              <div className="content sm:w-7/12 w-full p-4">
-                <div className="heading text-2xl font-[700] text-orange-50 my-4">
-                  Blog Title
-                </div>
-                <div className="relatedContent text-base font-[400] text-neutral-500">
-                  Crafting the perfect blog title is crucial for capturing your
-                  audience's attention. Our tool helps you effortlessly create
-                  engaging and relevant titles based on your content. Simply
-                  enter your text, and we’ll provide a range of title
-                  suggestions designed to attract readers and enhance your
-                  blog's appeal. Save time and boost your content's visibility
-                  with titles that stand out.
-                </div>
-              </div>
-              <div className="image sm:w-5/12 w-10/12 p-4">
-                <img className=" rounded-md w-full" src={demoImg1} />
-              </div>
-            </div>
-            <div className="feature2 flex sm:flex-row flex-col justify-center items-center md:p-6 sm:p-4 p-2">
-              <div className="image sm:w-5/12 w-10/12 p-4">
-                <img className=" rounded-md w-full" src={demoImg1} />
-              </div>
-              <div className="content sm:w-7/12 w-full p-4">
-                <div className="heading text-2xl font-[700] text-orange-50 my-4">
-                  Blog summary
-                </div>
-                <div className="relatedContent text-base font-[400] text-neutral-500">
-                  Summarizing your blog posts has never been easier. Our tool
-                  takes your full-length content and generates a clear, engaging
-                  summary that captures the essence of your blog. Ideal for
-                  providing readers with quick insights or enhancing your
-                  content’s SEO, this feature ensures that every post has a
-                  compelling summary that drives engagement and encourages
-                  readers to dive deeper into your content.
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      
       </div>
       <Part2 part2Ref={part2Ref} isPart2Visible={true} />
       <Footer isFooterVisible={true} />

@@ -3,14 +3,14 @@ import { Link, useNavigate } from 'react-router-dom'
 import '../css/navbar/navbar.css'
 import '../css/navbar/importedCss.css'
 
-const Navbar = (props) => {
+const Navbar = () => {
 
     const navigate = useNavigate()
 
 
 
     return (
-        <div ref={props.navbarRef} className='navbar position-absolute top-0 start-0 w-100  '>
+        <div  className='navbar position-absolute top-0 start-0 w-100  '>
             <div className="navbarGroup w-100 pt-2 d-flex align-items-center position-relative">
                 <div className="siteName mx-3 mb-2 fw-bolder ">
                     <div className="name " onClick={()=>{navigate("/")}} >Easy Text</div>
