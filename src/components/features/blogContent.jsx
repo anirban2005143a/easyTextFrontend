@@ -31,8 +31,7 @@ const blogContent = () => {
           prompt,
         }
       );
-      console.log(response);
-      currentTarget.disabled = false;
+       currentTarget.disabled = false;
       setData(response.data.data);
       setLoading(false);
     } catch (error) {
@@ -40,10 +39,8 @@ const blogContent = () => {
       toast.error(
         "Hacing some issue in Gemini API server or the model is overloaded , try again later"
       );
-      console.log(error);
-      setLoading(false);
-      console.log(error.response.data.message);
-      setData(error.response.statusText);
+       setLoading(false);
+       setData(error.response.statusText);
     }
   };
 

@@ -22,7 +22,6 @@ const blogTitle = () => {
     currentTarget.disabled = true;
     setLoading(true);
     toast.success("Generation is in progress");
-    console.log(prompt)
     try {
       const userId = import.meta.env.VITE_REACT_USERID;
       const response = await axios.post(
@@ -32,7 +31,6 @@ const blogTitle = () => {
           prompt,
         }
       );
-      console.log(response);
       currentTarget.disabled = false;
       setData(response.data.data);
       setLoading(false);
@@ -41,9 +39,7 @@ const blogTitle = () => {
       toast.error(
         "Hacing some issue in Gemini API server or the model is overloaded , try again later"
       );
-      console.log(error);
       setLoading(false);
-      console.log(error.response.data.message);
       setData(error.response.statusText);
     }
   };
@@ -58,7 +54,6 @@ const blogTitle = () => {
     color: "transparent",
     animation: "textBackground 30s linear 0s infinite",
   };
-  // console.log(Loading);
   return (
     <>
       <Navbar />
