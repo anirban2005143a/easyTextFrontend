@@ -105,7 +105,7 @@ const blogContent = () => {
         {data && (
           <div
             id="output"
-            className=" flex justify-center  items-center "
+            className=" mb-10 flex justify-center  items-center "
             style={{ color: "rgb(255 250 226)" }}
           >
             <div className=" md:w-9/12 sm:w-11/12 w-full md:p-4 p-2 bg-zinc-900 rounded-xl">
