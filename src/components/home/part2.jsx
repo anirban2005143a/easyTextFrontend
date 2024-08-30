@@ -52,11 +52,7 @@ const Part2 = (props) => {
 
         <div className="allservices ">
           <div className="serviceList mx-md-4 mx-2 my-3 px-md-2 px-1 pt-2 d-flex flex-wrap justify-content-center items-start">
-            <div className="serciceItem mx-2 my-2 position-relative rounded-3 overflow-hidden text-center text-white" onClick={() => { navigate("/features/blog/title") }}>
-              <div className='serviceName rounded-top-3 position-relative z-1 bg-black px-md-3 px-2 pt-md-3 pt-sm-2 pt-3 fs-4 fw-bold' > Blog Title</div>
-              <div className='relatedContent rounded-bottom-3 bg-black position-relative z-1 fw-light text-center px-2 pb-4 pt-1' style={{ fontSize: "15px" }}>          Generate engaging blog titles effortlessly with our tool. Input your content, and we’ll suggest compelling titles that capture your audience's attention.
-              </div>
-            </div>
+           
             <div className="serciceItem mx-2 my-2 position-relative rounded-3 overflow-hidden text-center text-white" onClick={() => { navigate("/features/blog/content") }}>
               <div className='serviceName rounded-top-3 position-relative z-1 bg-black px-md-3 px-2 pt-md-3 pt-sm-2 pt-3 fs-4 fw-bold'  > Blog Content</div>
               <div className='relatedContent rounded-bottom-3 bg-black position-relative z-1 fw-light text-center px-2 pb-4 pt-1' style={{ fontSize: "15px" }}>          Transform your text into polished blog posts with ease using our intuitive tool. Simply input your content and let our feature format and enhance it for a professional finish.
@@ -65,6 +61,11 @@ const Part2 = (props) => {
             <div className="serciceItem mx-2 my-2 position-relative rounded-3 overflow-hidden text-center text-white" onClick={() => { navigate('/features/blog/summary') }}>
               <div className='serviceName rounded-top-3 position-relative z-1 bg-black px-md-3 px-2 pt-md-3 pt-sm-2 pt-3 fs-4 fw-bold'> Blog summary</div>
               <div className='relatedContent rounded-bottom-3 bg-black position-relative z-1 fw-light text-center px-2 pb-4 pt-1' style={{ fontSize: "15px" }}>          Effortlessly create concise blog summaries with our tool. Input your blog content, and receive a well-crafted summary that highlights key points and engages your readers
+              </div>
+            </div>
+            <div className="serciceItem mx-2 my-2 position-relative rounded-3 overflow-hidden text-center text-white" onClick={() => { navigate("/features/blog/title") }}>
+              <div className='serviceName rounded-top-3 position-relative z-1 bg-black px-md-3 px-2 pt-md-3 pt-sm-2 pt-3 fs-4 fw-bold' > Blog Title</div>
+              <div className='relatedContent rounded-bottom-3 bg-black position-relative z-1 fw-light text-center px-2 pb-4 pt-1' style={{ fontSize: "15px" }}>          Generate engaging blog titles effortlessly with our tool. Input your content, and we’ll suggest compelling titles that capture your audience's attention.
               </div>
             </div>
             {/* <div className="serciceItem mx-2 my-2 position-relative rounded-3 overflow-hidden text-center text-white" onClick={() => { navigate('/features/paragraph') }}>
