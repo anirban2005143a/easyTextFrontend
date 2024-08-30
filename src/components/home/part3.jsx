@@ -8,7 +8,7 @@ const part3 = (props) => {
             <div ref={props.part3Ref} className={`homePart3 py-10 ${window.innerWidth > 500 ? "px-7" : "px-2"}`}>
                 <div className={` content flex md:flex-row flex-col-reverse justify-center items-center ${window.innerWidth > 500 ? "px-7" : "px-2"} `}>
                     <div className={`textContent md:w-7/12 w-full transition-all duration-500 ease-in ${props.isPart3Visible ? 'opacity-100 translate-x-0' : "opacity-0 -translate-x-20"}`}>
-                        <div className="heading text-3xl font-medium">AI-Powered Content Generation</div>
+                        <div className="heading text-2xl font-bold">AI-Powered Content Generation</div>
                         <div className="relatedContent text-base font-normal">
                             Leverage cutting-edge AI technology to create a wide variety of content, from blogs to social media posts, with just a few clicks. Whether you're a content creator, marketer, or someone looking to express ideas, our platform helps you generate high-quality text tailored to your needs. The AI models are designed to understand your input and produce engaging and relevant content, saving you time and effort
                         </div>

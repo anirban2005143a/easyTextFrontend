@@ -8,7 +8,7 @@ const Part5 = (props) => {
             <div ref={props.part5Ref} className={`homePart4 py-10 ${window.innerWidth > 500 ? "px-7" : "px-2"}`}>
                 <div className={` content flex md:flex-row flex-col-reverse justify-center items-center ${window.innerWidth > 500 ? "px-7" : "px-2"}`}>
                     <div className={`textContent md:w-7/12 transition-all duration-500 ease-in ${props.isPart5Visible ? 'opacity-100 translate-x-0' : "opacity-0 -translate-x-20"}`}>
-                        <div className="heading text-3xl font-medium">Streamlined User Experience</div>
+                        <div className="heading text-2xl font-bold">Streamlined User Experience</div>
                         <div className="relatedContent text-base font-normal">
                             We focus on providing a seamless experience, allowing you to transform your ideas into polished content quickly and easily. The interface is intuitive, requiring minimal input from you while delivering maximum output. Whether you're generating content for a blog, crafting a social media post, or exploring creative ideas, the process is designed to be smooth, efficient, and enjoyable.                    </div>
                     </div>
