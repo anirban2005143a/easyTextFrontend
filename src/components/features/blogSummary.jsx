@@ -1,9 +1,8 @@
-import React, { useContext, useState , useRef } from "react";
+import React, { useContext, useState, useRef } from "react";
 import ProjectContext from "../../context/projectContext";
 import Navbar from "../navbar";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import demoImg1 from "/download (1).jpeg";
 import Part2 from "../home/part2";
 import Footer from "../footer";
 import axios from "axios";
@@ -72,7 +71,7 @@ const blogSummary = () => {
             blog summary
           </div>
           <div className="relatedText text-center text-lg px-8 py-3 text-amber-100">
-          Effortlessly create concise blog summaries with our tool. Input your blog content, and receive a well-crafted summary that highlights key points and engages your readers
+            Effortlessly create concise blog summaries with our tool. Input your blog content, and receive a well-crafted summary that highlights key points and engages your readers
           </div>
         </div>
 
@@ -103,17 +102,17 @@ const blogSummary = () => {
           <Loadingui />
         </div>}
 
-        {data && <div id="output" className=" flex justify-center  items-center " style={{color:"rgb(255 250 226)"}}>
+        {data && <div id="output" className=" flex justify-center  items-center " style={{ color: "rgb(255 250 226)" }}>
           <div className=" md:w-9/12 sm:w-11/12 w-full md:p-4 p-2 bg-zinc-900 rounded-xl">
             <pre className=" whitespace-pre-wrap break-words">{data}</pre>
           </div>
         </div>}
 
-        
+
       </div>
       <Part2 part2Ref={part2Ref} isPart2Visible={true} />
       <Footer isFooterVisible={true} />
-      <ToastContainer/>
+      <ToastContainer />
     </>
   );
 };

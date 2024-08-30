@@ -1,4 +1,4 @@
-import React, { useContext, useState , useRef } from "react";
+import React, { useContext, useState, useRef } from "react";
 import ProjectContext from "../../context/projectContext";
 import Navbar from "../navbar.jsx";
 import { ToastContainer, toast } from "react-toastify";
@@ -114,7 +114,7 @@ const JobRole = () => {
       </div>
       <Part2 part2Ref={part2Ref} isPart2Visible={true} />
       <Footer isFooterVisible={true} />
-      <ToastContainer/>
+      <ToastContainer />
     </>
   );
 };

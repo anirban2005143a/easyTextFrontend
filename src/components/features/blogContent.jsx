@@ -1,9 +1,8 @@
-import React, { useContext, useState , useRef } from "react";
+import React, { useContext, useState, useRef } from "react";
 import ProjectContext from "../../context/projectContext";
 import Navbar from "../navbar.jsx";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import demoImg1 from "/download (1).jpeg";
 import Part2 from "../home/part2";
 import Footer from "../footer.jsx";
 import axios from "axios";
@@ -118,11 +117,11 @@ const blogContent = () => {
           </div>
         )}
 
-      
+
       </div>
       <Part2 part2Ref={part2Ref} isPart2Visible={true} />
       <Footer isFooterVisible={true} />
-      <ToastContainer/>
+      <ToastContainer />
     </>
   );
 };
