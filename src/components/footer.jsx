@@ -63,7 +63,7 @@ const Footer = (props) => {
           <div className="supportItem cursor-pointer"> <Link className=' text-decoration-none' to="/"> <div> Home</div></Link></div>
           <div className="supportItem cursor-pointer"> <Link className=' text-decoration-none' to="/about"> <div> About</div></Link></div>
           <div className="supportItem cursor-pointer"> <Link className=' text-decoration-none' to="/contact"> <div> Contact</div></Link></div>
-          <div className="supportItem cursor-pointer"> <Link className=' text-decoration-none' to="/requestFeature"> <div> Request a new feature</div></Link></div>
+          {/* <div className="supportItem cursor-pointer"> <Link className=' text-decoration-none' to="/requestFeature"> <div> Request a new feature</div></Link></div> */}
         </div>
 
       </div>

@@ -1,12 +1,53 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef, useContext } from 'react'
 import Navbar from '../navbar.jsx'
 import Footer from '../footer.jsx'
 import '../../css/support.css'
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Loadingui from '../Loadingui.jsx';
+import ProjectContext from '../../context/projectContext.js';
 
 const Contact = () => {
 
+    const value = useContext(ProjectContext)
+
     const footerRef = useRef()
     const [isFooterVisible, setisFooterVisible] = useState(false)
+    const [Loading, setLoading] = useState(false)
+
+    const sendmail = async (e) => {
+        setLoading(true)
+        const btn = e.currentTarget.querySelector("button")
+        btn.disabled = true
+        const email = document.querySelector("#userMail").value
+        const subject = document.querySelector("#mailSubject").value
+        const content = document.querySelector("#mailingText").value
+        toast.success("Generation is in progress")
+        const res = await fetch(`${value.backendURL}/user/contact`,
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    email,
+                    content: `Subject is - ${subject} \n\nContent is - ${content}`
+                })
+            }
+        )
+        const data = await res.json()
+        console.log(data)
+        btn.disabled = false;
+        document.querySelector("#userMail").value = ""
+        document.querySelector("#mailSubject").value = ""
+        document.querySelector("#mailingText").value = ""
+        setLoading(false)
+        if (!data.error) {
+            toast.success(data.message)
+        } else {
+            toast.error(data.message)
+        }
+    }
 
     useEffect(() => {
         const options = {
@@ -40,15 +81,18 @@ const Contact = () => {
                     <div className="heading font-serif py-4 text-4xl font-bold ">Contact Us</div>
                     <div className="relatedContent">Your experience is our priority, and we're committed to ensuring you get the most out of our AI-powered content generation tools. Thank you for connecting with us!</div>
                     <div className="contactForm rounded-4 overflow-hidden ">
-                        <form className='w-100 p-2 z-1 position-relative bg-black rounded-4 py-4 px-2'>
+                        <form onSubmit={(e) => {
+                            e.preventDefault()
+                            sendmail(e)
+                        }} className='w-100 p-2 z-1 position-relative bg-black rounded-4 py-4 px-2'>
                             <div className=' mx-auto formContent' >
                                 <div className="enterGmail w-100 my-1">
                                     <label htmlFor="userMail">Enter email</label><br />
                                     <input type="email" id='userMail' placeholder='Enter email' className='placeholder:text-gray-900' />
                                 </div>
                                 <div className="mailSubject w-100 my-1">
-                                    <label htmlFor="userMail">Write Subject</label><br />
-                                    <input type="email" id='userMail' placeholder='Write Subject' className='placeholder:text-gray-900' />
+                                    <label htmlFor="mailSubject">Write Subject</label><br />
+                                    <input type="text" id='mailSubject' placeholder='Write Subject' className='placeholder:text-gray-900' />
                                 </div>
                                 <div className="mailContent w-100 my-1">
                                     <label htmlFor="mailingText">Write Content</label><br />
@@ -62,13 +106,17 @@ const Contact = () => {
                             </div>
 
                         </form>
+
                     </div>
                 </div>
-
+                {Loading && (
+                    <div className="loadng">
+                        <Loadingui />
+                    </div>
+                )}
                 <Footer footerRef={footerRef} isFooterVisible={isFooterVisible} />
-
             </div>
-
+            <ToastContainer />
         </>
 
     )
